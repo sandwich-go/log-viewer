@@ -12,8 +12,9 @@
         item.foreground ? 'log-fore-' + item.foreground : '',
         item.background ? 'log-back-' + item.background : ''
       ]"
-      >{{ item.text }}</span
     >
+      <div class="log-viewer-content-text">{{ item.text }}</div>
+    </span>
   </div>
 </template>
 <script>

@@ -11,6 +11,7 @@
     :itemcount="linesCount"
     :itemprops="getLineWrapperProps"
     :onscroll="onscroll"
+    :class="{'log-viewer-soft-wrap': softWrap}"
   >
   </virtual-list>
 </template>
@@ -66,6 +67,13 @@ export default {
       default: true
     },
     /**
+     * soft wrap
+     */
+    softWrap: {
+      type: Boolean,
+      default: false
+    },
+    /**
      * Has number line if hasNumber is true. Defaults to be true.
      */
     hasNumber: {
@@ -106,6 +114,12 @@ export default {
     }
   },
   watch: {
+    softWrap: {
+      handler(val) {
+        console.log('log-viewer  ', val)
+      },
+      immediate: true
+    },
     lines: {
       immediate: true,
       handler(lines) {
@@ -128,6 +142,7 @@ export default {
       const height = this.rowHeight
       const props = {
         height,
+        softWrap: this.softWrap,
         hasNumber: this.hasNumber,
         numberData: {
           number: index + 1
@@ -193,5 +208,17 @@ export default {
   background-color: #222;
   overflow-x: auto;
   padding: 20px 0;
+}
+
+// global style
+.log-viewer-content-text {
+  text-align: justify;
+  white-space: nowrap;
+}
+
+// global style
+.log-viewer-soft-wrap .log-viewer-content-text {
+  text-align: justify;
+  white-space: pre-wrap;
 }
 </style>

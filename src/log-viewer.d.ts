@@ -45,6 +45,7 @@ declare module '@femessage/log-viewer' {
     log: string
     loading: boolean
     autoScroll: boolean
+    softWrap:boolean
     hasNumber: boolean
     scrollDuration: number
   }

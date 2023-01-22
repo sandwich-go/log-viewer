@@ -51,8 +51,7 @@ export default {
         typeof this.height === 'number' ? this.height + 'px' : this.height
       return Object.assign(
         {
-          lineHeight: height,
-          height
+          lineHeight: height
         },
         this.comStyle
       )
@@ -65,11 +64,12 @@ export default {
   display: flex;
   color: #f1f1f1;
   line-height: 20px;
-  height: 20px;
-  white-space: pre;
+
+  // height: 20px;
   // word-break: break-all;
   box-sizing: border-box;
   padding-left: 16px;
+  padding-right: 16px;
 
   &:hover {
     background-color: #444;
