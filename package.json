@@ -1,12 +1,12 @@
 {
-  "name": "@femessage/log-viewer",
-  "version": "1.1.1",
+  "name": "@sandwich-go/log-viewer",
+  "version": "1.6.1",
   "description": "💻 View terminal logs in browser",
-  "author": "https://github.com/FEMessage",
+  "author": "https://github.com/sandwich-go",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FEMessage/log-viewer.git"
+    "url": "https://github.com/sandwich-go/log-viewer.git"
   },
   "keywords": [
     "vue",
