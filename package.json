@@ -1,6 +1,6 @@
 {
   "name": "@femessage/log-viewer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "💻 View terminal logs in browser",
   "author": "https://github.com/FEMessage",
   "license": "MIT",
@@ -37,7 +37,8 @@
     "release": "gren release --override"
   },
   "dependencies": {
-    "vue-virtual-scroll-list": "^1.4.1"
+    "vue-virtual-scroll-list": "^1.4.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
