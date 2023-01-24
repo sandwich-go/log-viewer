@@ -20,7 +20,6 @@ import VirtualList from 'vue-virtual-scroll-list'
 import LineWrapper from './components/line-wrapper.vue'
 import LogLoading from './components/loading.vue'
 import parse from './utils'
-
 export default {
   name: 'LogViewer',
   components: {
@@ -66,12 +65,9 @@ export default {
       type: Boolean,
       default: true
     },
-    /**
-     * soft wrap
-     */
     softWrap: {
       type: Boolean,
-      default: false
+      default: true
     },
     /**
      * Has number line if hasNumber is true. Defaults to be true.
@@ -114,12 +110,6 @@ export default {
     }
   },
   watch: {
-    softWrap: {
-      handler(val) {
-        console.log('log-viewer  ', val)
-      },
-      immediate: true
-    },
     lines: {
       immediate: true,
       handler(lines) {
@@ -142,7 +132,6 @@ export default {
       const height = this.rowHeight
       const props = {
         height,
-        softWrap: this.softWrap,
         hasNumber: this.hasNumber,
         numberData: {
           number: index + 1
@@ -209,7 +198,6 @@ export default {
   overflow-x: auto;
   padding: 20px 0;
 }
-
 // global style
 .log-viewer-content-text {
   text-align: justify;

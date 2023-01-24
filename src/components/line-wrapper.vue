@@ -64,8 +64,8 @@ export default {
   display: flex;
   color: #f1f1f1;
   line-height: 20px;
-
-  // height: 20px;
+  //height: 20px;
+  //white-space: pre;
   // word-break: break-all;
   box-sizing: border-box;
   padding-left: 16px;
