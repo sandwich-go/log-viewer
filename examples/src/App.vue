@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import LogViewer from '../../src'
+// import LogViewer from '../../src'
+import LogViewer from '@sandwich-go/log-viewer'
 export default {
   name: 'App',
   components: {
