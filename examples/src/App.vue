@@ -22,8 +22,9 @@
 </template>
 
 <script>
-// import LogViewer from '../../src'
-import LogViewer from '@sandwich-go/log-viewer'
+import LogViewer from '../../src'
+// import LogViewer from '@sandwich-go/log-viewer'
+import {demoLog} from '@/app'
 export default {
   name: 'App',
   components: {
@@ -40,8 +41,7 @@ export default {
   data() {
     return {
       softWrap: true,
-      log:
-        'test number linetest number linetest number linetest number linetest number linetest number lumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetumber linetest number linetest number linetinetest number linetest number linetest number linetest number linetest number linetest number linetest number linetest number line.\ntesinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number luinetest number linetest number linetest number linetest number linetest number lut number line.',
+      log: demoLog,
       hasNumbers: [true, false]
     }
   }

@@ -1,5 +1,6 @@
-declare module '@sandwich-go/log-viewer' {
-  import Vue, {VueConstructor} from 'vue'
+import Vue, {VueConstructor} from 'vue'
+
+declare module '@femessage/log-viewer' {
   class FemessageComponent extends Vue {
     static install(vue: typeof Vue): void
   }
@@ -45,7 +46,6 @@ declare module '@sandwich-go/log-viewer' {
     log: string
     loading: boolean
     autoScroll: boolean
-    softWrap:boolean
     hasNumber: boolean
     scrollDuration: number
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="line-content">
+  <div class="line-content log-viewer-content-text">
     <span
       v-for="(item, index) in content"
       :key="index"
@@ -12,7 +12,7 @@
         item.foreground ? 'log-fore-' + item.foreground : '',
         item.background ? 'log-back-' + item.background : ''
       ]"
-      ><div class="log-viewer-content-text">{{ item.text }}</div></span
+      >{{ item.text }}</span
     >
   </div>
 </template>

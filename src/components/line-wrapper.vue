@@ -52,6 +52,7 @@ export default {
       return Object.assign(
         {
           lineHeight: height
+          // height
         },
         this.comStyle
       )

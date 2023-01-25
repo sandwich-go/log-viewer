@@ -20,12 +20,18 @@ import VirtualList from 'vue-virtual-scroll-list'
 import LineWrapper from './components/line-wrapper.vue'
 import LogLoading from './components/loading.vue'
 import parse from './utils'
+
 export default {
   name: 'LogViewer',
   components: {
     VirtualList
   },
   props: {
+    softWrap: {
+      type: Boolean,
+      default: true
+    },
+
     /**
      * VirtualList original props
      * Reference: https://github.com/tangbc/vue-virtual-scroll-list
@@ -62,10 +68,6 @@ export default {
      * Auto scroll to the bottom when the logs update. Defaults to be true
      */
     autoScroll: {
-      type: Boolean,
-      default: true
-    },
-    softWrap: {
       type: Boolean,
       default: true
     },
@@ -203,7 +205,6 @@ export default {
   text-align: justify;
   white-space: nowrap;
 }
-
 // global style
 .log-viewer-soft-wrap .log-viewer-content-text {
   text-align: justify;
