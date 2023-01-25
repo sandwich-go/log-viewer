@@ -1,17 +1,17 @@
 {
-  "_from": "@femessage/log-viewer@^1.5.0",
-  "_id": "@femessage/log-viewer@1.5.0",
+  "_from": "@sandwich-go/log-viewer@^1.5.0",
+  "_id": "@sandwich-go/log-viewer@1.5.0",
   "_inBundle": false,
   "_integrity": "sha512-M26D7tqii6g+8yRRycyTevbaAJhO6FqVhCVpoNAdqJTOJD1D8P9wxt0SKqGuzYGE0AbKogE6UdHC02aVqFSDpw==",
-  "_location": "/@femessage/log-viewer",
+  "_location": "/@sandwich-go/log-viewer",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "@femessage/log-viewer@^1.5.0",
-    "name": "@femessage/log-viewer",
-    "escapedName": "@femessage%2flog-viewer",
-    "scope": "@femessage",
+    "raw": "@sandwich-go/log-viewer@^1.5.0",
+    "name": "@sandwich-go/log-viewer",
+    "escapedName": "@sandwich-go%2flog-viewer",
+    "scope": "@sandwich-go",
     "rawSpec": "^1.5.0",
     "saveSpec": null,
     "fetchSpec": "^1.5.0"
@@ -19,18 +19,18 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@femessage/log-viewer/-/log-viewer-1.5.0.tgz",
+  "_resolved": "https://registry.npmjs.org/@sandwich-go/log-viewer/-/log-viewer-1.5.0.tgz",
   "_shasum": "e4d5a3d26c0c5c109609f15399b0bc74320b25c0",
-  "_spec": "@femessage/log-viewer@^1.5.0",
+  "_spec": "@sandwich-go/log-viewer@^1.5.0",
   "_where": "/Users/wh/prjs/funplus/sandwich-pmt/frontend",
   "author": {
-    "name": "https://github.com/FEMessage"
+    "name": "https://github.com/sandwich-go"
   },
   "browser": {
     "./sfc": "src/log-viewer.vue"
   },
   "bugs": {
-    "url": "https://github.com/FEMessage/log-viewer/issues"
+    "url": "https://github.com/sandwich-go/log-viewer/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -42,7 +42,7 @@
     "@babel/core": "^7.4.3",
     "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
-    "@femessage/github-release-notes": "latest",
+    "@sandwich-go/github-release-notes": "latest",
     "babel-loader": "^8.0.5",
     "file-loader": "^3.0.1",
     "glob": "^7.1.3",
@@ -76,8 +76,8 @@
     "src",
     "dist"
   ],
-  "gren": "@femessage/grenrc",
-  "homepage": "https://github.com/FEMessage/log-viewer#readme",
+  "gren": "@sandwich-go/grenrc",
+  "homepage": "https://github.com/sandwich-go/log-viewer#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -108,13 +108,13 @@
   },
   "main": "dist/log-viewer.umd.js",
   "module": "dist/log-viewer.esm.js",
-  "name": "@femessage/log-viewer",
+  "name": "@sandwich-go/log-viewer",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FEMessage/log-viewer.git"
+    "url": "git+https://github.com/sandwich-go/log-viewer.git"
   },
   "scripts": {
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd & npm run doc",

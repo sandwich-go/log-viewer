@@ -1,6 +1,6 @@
 import Vue, {VueConstructor} from 'vue'
 
-declare module '@femessage/log-viewer' {
+declare module '@sandwich-go/log-viewer' {
   class FemessageComponent extends Vue {
     static install(vue: typeof Vue): void
   }
