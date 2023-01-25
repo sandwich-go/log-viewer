@@ -1,7 +1,7 @@
 <template>
   <virtual-list
     class="log-viewer"
-    ref="virturalList"
+    ref="virtualList"
     v-bind="virtualAttrs"
     :size="rowHeight"
     :remain="remain"
@@ -115,7 +115,7 @@ export default {
     lines: {
       immediate: true,
       handler(lines) {
-        this.$refs.virturalList && this.$refs.virturalList.forceRender()
+        this.$refs.virtualList && this.$refs.virtualList.forceRender()
         if (this.autoScroll) {
           this.setScrollTop(this.linesCount)
         }
@@ -124,10 +124,10 @@ export default {
   },
   methods: {
     /**
-     * virturalList forceRender method
+     * virtualList forceRender method
      */
     forceRender() {
-      this.$refs.virturalList.forceRender()
+      this.$refs.virtualList.forceRender()
     },
     //
     getLineWrapperProps(index) {
