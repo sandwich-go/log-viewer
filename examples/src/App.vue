@@ -72,6 +72,7 @@ export default {
               _this.log = demoLog
               _this.loading = false
             }, 1000)
+            _this.customStyle = {'border-top': '3px solid red'}
           } else {
             this.log = demoLog
           }
@@ -86,7 +87,7 @@ export default {
       autoScroll: true,
       loading: false,
       fontSize: 12,
-      customStyle: {'border-top': '3px solid red'},
+      customStyle: {},
       log: demoLog
     }
   },
