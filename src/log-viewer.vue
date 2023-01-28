@@ -1,6 +1,7 @@
 <template>
   <virtual-list
     class="log-viewer"
+    v-bind:style="logViewerStyle()"
     ref="virtualList"
     v-bind="virtualAttrs"
     :size="rowHeight"
@@ -31,7 +32,10 @@ export default {
       type: Boolean,
       default: true
     },
-
+    fontSize: {
+      type: Number,
+      default: 12
+    },
     /**
      * VirtualList original props
      * Reference: https://github.com/tangbc/vue-virtual-scroll-list
@@ -129,6 +133,9 @@ export default {
     forceRender() {
       this.$refs.virtualList.forceRender()
     },
+    logViewerStyle() {
+      return {'font-size': `${this.fontSize}px`}
+    },
     //
     getLineWrapperProps(index) {
       const height = this.rowHeight
@@ -198,7 +205,7 @@ export default {
   font-size: 12px;
   background-color: #222;
   overflow-x: auto;
-  padding: 20px 0;
+  padding: 9px 0;
 }
 // global style
 .log-viewer-content-text {

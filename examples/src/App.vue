@@ -1,22 +1,33 @@
 <template>
   <div id="app">
-    <div style="position: absolute; left: 6px;">
-      <input type="checkbox" id="softWrap" v-model="softWrap" />
-      <label for="softWrap">{{
-        softWrap ? 'Soft Wrap' : 'Soft Wrap Off'
-      }}</label>
-    </div>
-    <div style="position: absolute; left: 140px;">
-      <input type="checkbox" id="lineNumber" v-model="lineNumber" />
-      <label for="lineNumber">{{
-        lineNumber ? 'Line Number' : 'Line Number Off'
-      }}</label>
-    </div>
-    <div style="position: absolute; left: 300px;">
-      <input type="checkbox" id="autoScroll" v-model="autoScroll" />
-      <label for="autoScroll">{{
-        autoScroll ? 'Auto Scroll' : 'Auto Scroll Off'
-      }}</label>
+    <div id="measure-vh" style="position: fixed; height: 100vh;"></div>
+    <div class="div-flex-start" style="gap: 30px;">
+      <div>
+        <input type="checkbox" id="softWrap" v-model="softWrap" />
+        <label for="softWrap">{{
+          softWrap ? 'Soft Wrap' : 'Soft Wrap Off'
+        }}</label>
+      </div>
+      <div>
+        <input type="checkbox" id="lineNumber" v-model="lineNumber" />
+        <label for="lineNumber">{{
+          lineNumber ? 'Line Number' : 'Line Number Off'
+        }}</label>
+      </div>
+      <div>
+        <input type="checkbox" id="autoScroll" v-model="autoScroll" />
+        <label for="autoScroll">{{
+          autoScroll ? 'Auto Scroll' : 'Auto Scroll Off'
+        }}</label>
+      </div>
+      <div>
+        <label for="fontSize" style="padding-right: 3px;">FontSize</label>
+        <select v-model="fontSize" id="fontSize">
+          <option selected>12</option>
+          <option>13</option>
+          <option>14</option>
+        </select>
+      </div>
     </div>
     <br />
     <div>
@@ -24,8 +35,9 @@
         :soft-wrp="softWrap"
         :has-number="lineNumber"
         :auto-scroll="autoScroll"
-        :height="800"
+        :height="logViewHeight(80)"
         :loading="loading"
+        :font-size="fontSize"
         :scroll-duration="1000"
         :log="log"
       />
@@ -34,9 +46,10 @@
 </template>
 
 <script>
-// import LogViewer from '../../src'
-import LogViewer from '@sandwich-go/log-viewer'
+import LogViewer from '../../src'
+// import LogViewer from '@sandwich-go/log-viewer'
 import {demoLog} from '@/app'
+
 export default {
   name: 'App',
   components: {
@@ -70,7 +83,14 @@ export default {
       lineNumber: true,
       autoScroll: true,
       loading: false,
+      fontSize: 12,
       log: demoLog
+    }
+  },
+  methods: {
+    logViewHeight(diff) {
+      const vh = document.querySelector('#measure-vh')
+      return vh ? vh.clientHeight - (diff || 0) : 800
     }
   }
 }
@@ -83,10 +103,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
-.has-number {
-  margin-bottom: 8px;
+.div-flex-start {
+  display: flex;
+  align-items: center;
+  color: gray;
+  justify-content: flex-start;
+  overflow: hidden;
+  z-index: 10;
 }
 </style>
