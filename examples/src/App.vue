@@ -1,21 +1,33 @@
 <template>
   <div id="app">
     <div style="position: absolute; left: 6px;">
-      <input type="checkbox" id="checkbox" v-model="softWrap" />
-      <label for="checkbox">{{
+      <input type="checkbox" id="softWrap" v-model="softWrap" />
+      <label for="softWrap">{{
         softWrap ? 'Soft Wrap' : 'Soft Wrap Off'
+      }}</label>
+    </div>
+    <div style="position: absolute; left: 140px;">
+      <input type="checkbox" id="lineNumber" v-model="lineNumber" />
+      <label for="lineNumber">{{
+        lineNumber ? 'Line Number' : 'Line Number Off'
+      }}</label>
+    </div>
+    <div style="position: absolute; left: 300px;">
+      <input type="checkbox" id="autoScroll" v-model="autoScroll" />
+      <label for="autoScroll">{{
+        autoScroll ? 'Auto Scroll' : 'Auto Scroll Off'
       }}</label>
     </div>
     <br />
     <div>
       <log-viewer
-        class="has-number"
-        v-for="hasNumber in hasNumbers"
-        :key="hasNumber"
-        :soft-wrap="softWrap"
-        :height="600"
+        :soft-wrp="softWrap"
+        :has-number="lineNumber"
+        :auto-scroll="autoScroll"
+        :height="800"
+        :loading="loading"
+        :scroll-duration="1000"
         :log="log"
-        :has-number="hasNumber"
       />
     </div>
   </div>
@@ -31,18 +43,34 @@ export default {
     LogViewer
   },
   watch: {
-    softWrap: {
-      handler(val) {
-        console.log('softWrap watch ', val)
-      },
-      immediate: true
+    autoScroll: {
+      handler() {
+        if (!this.autoScroll) {
+          return
+        }
+        this.log = ''
+        const _this = this
+        this.$nextTick(function() {
+          if (this.autoScroll) {
+            this.loading = true
+            setTimeout(function() {
+              _this.log = demoLog
+              _this.loading = false
+            }, 1000)
+          } else {
+            this.log = demoLog
+          }
+        })
+      }
     }
   },
   data() {
     return {
       softWrap: true,
-      log: demoLog,
-      hasNumbers: [true, false]
+      lineNumber: true,
+      autoScroll: true,
+      loading: false,
+      log: demoLog
     }
   }
 }
