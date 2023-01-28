@@ -37,9 +37,10 @@
         :auto-scroll="autoScroll"
         :height="logViewHeight(80)"
         :loading="loading"
-        :font-size="fontSize"
+        :font-size="Number(fontSize)"
         :scroll-duration="1000"
         :log="log"
+        ref="logViewer"
       />
     </div>
   </div>
