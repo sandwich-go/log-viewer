@@ -1,8 +1,8 @@
 Fork of [FEMessage/log-viewer](https://github.com/FEMessage/log-viewer).
 
-- Support Soft Wrap
-- Support Font Size
-- Example Project
+- Support soft wrap
+- Support font size setting
+- Built-in example project.
 
 ![logviewer](https://zhongtai.s3.amazonaws.com/software/logviewer.png)
 
