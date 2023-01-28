@@ -208,6 +208,9 @@ export default {
 // global style
 .log-viewer-soft-wrap .log-viewer-content-text {
   text-align: left;
-  overflow: auto;
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -o-pre-wrap; /* newer Opera */
+  white-space: pre-wrap; /* Chrome; W3C standard */
+  word-wrap: break-word; /* IE */
 }
 </style>
