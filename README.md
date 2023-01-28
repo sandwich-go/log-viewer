@@ -4,6 +4,8 @@ Fork of [FEMessage/log-viewer](https://github.com/FEMessage/log-viewer).
 - Support Font Size
 - Example Project
 
+![logviewer](https://zhongtai.s3.amazonaws.com/software/logviewer.png)
+
 # log-viewer
 
 [![Build Status](https://badgen.net/travis/FEMessage/log-viewer/master)](https://travis-ci.com/FEMessage/log-viewer)
