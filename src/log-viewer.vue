@@ -1,7 +1,7 @@
 <template>
   <virtual-list
     class="log-viewer"
-    v-bind:style="logViewerStyle()"
+    v-bind:style="logViewerStyle"
     ref="virtualList"
     v-bind="virtualAttrs"
     :size="rowHeight"
@@ -31,6 +31,10 @@ export default {
     softWrap: {
       type: Boolean,
       default: true
+    },
+    customStyle: {
+      type: Object,
+      default() {}
     },
     fontSize: {
       type: Number,
@@ -113,6 +117,13 @@ export default {
     },
     linesCount() {
       return this.lines.length + (this.loading ? 1 : 0)
+    },
+    logViewerStyle() {
+      let style = this.customStyle || {}
+      if (!style['font-size']) {
+        style['font-size'] = `${this.fontSize}px`
+      }
+      return style
     }
   },
   watch: {
@@ -132,9 +143,6 @@ export default {
      */
     forceRender() {
       this.$refs.virtualList.forceRender()
-    },
-    logViewerStyle() {
-      return {'font-size': `${this.fontSize}px`}
     },
     //
     getLineWrapperProps(index) {

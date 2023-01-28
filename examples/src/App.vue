@@ -34,6 +34,7 @@
       <log-viewer
         :soft-wrp="softWrap"
         :has-number="lineNumber"
+        :custom-style="customStyle"
         :auto-scroll="autoScroll"
         :height="logViewHeight(80)"
         :loading="loading"
@@ -85,6 +86,7 @@ export default {
       autoScroll: true,
       loading: false,
       fontSize: 12,
+      customStyle: {'border-top': '3px solid red'},
       log: demoLog
     }
   },
