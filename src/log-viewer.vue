@@ -202,15 +202,12 @@ export default {
 }
 // global style
 .log-viewer-content-text {
-  text-align: justify;
+  text-align: left;
   white-space: pre;
 }
 // global style
 .log-viewer-soft-wrap .log-viewer-content-text {
-  text-align: justify;
-  white-space: -moz-pre-wrap; /* Firefox */
-  white-space: -o-pre-wrap; /* newer Opera */
-  white-space: pre-wrap; /* Chrome; W3C standard */
-  word-wrap: break-word; /* IE */
+  text-align: left;
+  overflow: auto;
 }
 </style>
