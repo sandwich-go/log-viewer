@@ -13,7 +13,7 @@
         v-for="hasNumber in hasNumbers"
         :key="hasNumber"
         :soft-wrap="softWrap"
-        :height="100"
+        :height="600"
         :log="log"
         :has-number="hasNumber"
       />
@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import LogViewer from '../../src'
-// import LogViewer from '@sandwich-go/log-viewer'
+// import LogViewer from '../../src'
+import LogViewer from '@sandwich-go/log-viewer'
 import {demoLog} from '@/app'
 export default {
   name: 'App',
