@@ -203,7 +203,7 @@ export default {
 // global style
 .log-viewer-content-text {
   text-align: justify;
-  white-space: nowrap;
+  white-space: pre;
 }
 // global style
 .log-viewer-soft-wrap .log-viewer-content-text {
