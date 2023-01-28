@@ -1,3 +1,9 @@
+Fork of [FEMessage/log-viewer](https://github.com/FEMessage/log-viewer).
+
+- 支持自动换行
+- 支持日志字体大小设定
+- 内置例子工程
+
 # log-viewer
 
 [![Build Status](https://badgen.net/travis/FEMessage/log-viewer/master)](https://travis-ci.com/FEMessage/log-viewer)
@@ -53,6 +59,7 @@ yarn add @femessage/log-viewer
 ```html
 <log-viewer :log="log" :loading="isLoading" />
 ```
+
 [⬆ Back to Top](#table-of-contents)
 
 ## Links
