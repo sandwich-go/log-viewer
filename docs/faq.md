@@ -3,7 +3,7 @@
 ```html
 <script lang="ts">
 // 需要引入这个
-// import { LogViewerType } from '@femessage/log-viewer'
+// import { LogViewerType } from '@sandwich-go/log-viewer'
 export default {
   mounted() {
     (this.$refs.logViewer as LogViewerType).autoScroll = false

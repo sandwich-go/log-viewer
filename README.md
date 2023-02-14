@@ -9,9 +9,9 @@ Fork of [FEMessage/log-viewer](https://github.com/FEMessage/log-viewer).
 # log-viewer
 
 [![Build Status](https://badgen.net/travis/FEMessage/log-viewer/master)](https://travis-ci.com/FEMessage/log-viewer)
-[![NPM Download](https://badgen.net/npm/dm/@femessage/log-viewer)](https://www.npmjs.com/package/@femessage/log-viewer)
-[![NPM Version](https://badgen.net/npm/v/@femessage/log-viewer)](https://www.npmjs.com/package/@femessage/log-viewer)
-[![NPM License](https://badgen.net/npm/license/@femessage/log-viewer)](https://github.com/FEMessage/log-viewer/blob/master/LICENSE)
+[![NPM Download](https://badgen.net/npm/dm/@sandwich-go/log-viewer)](https://www.npmjs.com/package/@sandwich-go/log-viewer)
+[![NPM Version](https://badgen.net/npm/v/@sandwich-go/log-viewer)](https://www.npmjs.com/package/@sandwich-go/log-viewer)
+[![NPM License](https://badgen.net/npm/license/@sandwich-go/log-viewer)](https://github.com/FEMessage/log-viewer/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FEMessage/log-viewer/pulls)
 [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
@@ -51,7 +51,7 @@ log-viewer is a vue component which can display terminal log in browser with hig
 ## Install
 
 ```bash
-yarn add @femessage/log-viewer
+yarn add @sandwich-go/log-viewer
 ```
 
 [⬆ Back to Top](#table-of-contents)
