@@ -12,8 +12,17 @@
         item.foreground ? 'log-fore-' + item.foreground : '',
         item.background ? 'log-back-' + item.background : ''
       ]"
-      >{{ item.text }}</span
     >
+      <template v-if="item.isUrl">
+        🔗
+        <a :href="item.text" target="_blank" style="color:royalblue;">{{
+          item.text
+        }}</a>
+      </template>
+      <template v-else>
+        {{ item.text }}
+      </template>
+    </span>
   </div>
 </template>
 <script>
