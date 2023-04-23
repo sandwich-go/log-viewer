@@ -14,7 +14,8 @@
       ]"
     >
       <template v-if="item.isUrl"
-        >🔗<a :href="item.text" target="_blank" style="color:royalblue;">{{
+        >🔗
+        <a :href="item.text" target="_blank" style="color:dodgerblue;">{{
           item.text
         }}</a>
       </template>
@@ -52,6 +53,7 @@ export default {
 @magenta: rgb(211, 56, 211);
 @cyan: rgb(51, 187, 200);
 @white: rgb(203, 204, 205);
+@darkRed: rgb(128, 0, 0);
 @bright-black: rgb(129, 131, 131);
 @bright-red: rgb(252, 57, 31);
 @bright-green: rgb(49, 231, 34);
@@ -60,6 +62,7 @@ export default {
 @bright-magenta: rgb(180, 0, 158);
 @bright-cyan: rgb(97, 214, 214);
 @bright-white: rgb(242, 242, 242);
+@bright-darkRed: rgb(128, 0, 0);
 .log(@color) {
   @bright: 'bright-@{color}';
 
@@ -108,6 +111,7 @@ export default {
   .log(magenta);
   .log(cyan);
   .log(white);
+  .log(darkRed);
 }
 
 // global style

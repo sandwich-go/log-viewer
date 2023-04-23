@@ -48,17 +48,33 @@ export default log => {
     }
     const oneLinePart = ansiParse(line)
     let oneLinePartNew = []
+    let lineBackground = ''
+    let lineBold = false
     oneLinePart.forEach(item => {
       findUrlsWithFlag(item.text).forEach(v => {
-        oneLinePartNew.push({
+        let subItem = {
           text: v.text,
           background: item.background,
           foreground: item.foreground,
           bold: item.bold,
           italic: item.italic,
-          underline: item.underline,
           isUrl: v.isUrl
-        })
+        }
+        if (subItem.text === 'WRN') {
+          subItem.underline = true
+          subItem.background = 'white'
+          lineBackground = 'darkRed'
+          lineBold = true
+        }
+        oneLinePartNew.push(subItem)
+      })
+      oneLinePartNew.forEach(v => {
+        if (lineBackground && !v.background) {
+          v.background = lineBackground
+        }
+        if (lineBold) {
+          v.bold = lineBold
+        }
       })
     })
     stringLinesText.push(oneLinePartNew)
