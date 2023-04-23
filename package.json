@@ -1,6 +1,6 @@
 {
   "name": "@sandwich-go/log-viewer",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/log-viewer.umd.js",
   "module": "dist/log-viewer.esm.js",
   "publishConfig": {
@@ -42,12 +42,6 @@
       "parser": "@babel/eslint-parser"
     },
     "rules": {}
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index --again"
-    }
   },
   "browserslist": [
     "> 1%",
