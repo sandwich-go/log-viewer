@@ -11,8 +11,18 @@ const config = {
   input: 'src/index.js',
   output: {
     name: 'LogViewer',
-    exports: 'named'
+    exports: 'named',
+    globals: {
+      'vue-virtual-scroll-list': 'VirtualList',
+      '@babel/runtime/helpers/slicedToArray': '_slicedToArray',
+      '@babel/runtime/helpers/defineProperty': '_defineProperty'
+    }
   },
+  external: [
+    'vue-virtual-scroll-list',
+    '@babel/runtime/helpers/slicedToArray',
+    '@babel/runtime/helpers/defineProperty'
+  ],
   plugins: [
     commonjs(),
     vue({
