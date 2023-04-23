@@ -64,7 +64,11 @@ export default log => {
           oneLinePartNew.lineStyle.background = '#800000'
           oneLinePartNew.lineStyle['font-weight'] = 'bold'
         }
-        if (subItem.text.includes('❌')) {
+        if (
+          subItem.text.includes('❌') ||
+          subItem.includes(' WRN ') ||
+          subItem.includes(' ERR ')
+        ) {
           oneLinePartNew.lineStyle.background = '#800000'
           oneLinePartNew.lineStyle['font-weight'] = 'bold'
         }

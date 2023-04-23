@@ -13,10 +13,9 @@
         item.background ? 'log-back-' + item.background : ''
       ]"
     >
-      <template v-if="item.isUrl"
-        >🔗
+      <template v-if="item.isUrl">
         <a :href="item.text" target="_blank" style="color:dodgerblue;">{{
-          item.text
+          `🔗 ${item.text}`
         }}</a>
       </template>
       <template v-else>{{ item.text }}</template>
