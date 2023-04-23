@@ -85,4 +85,9 @@ nothing to commit, working tree clean
 2023/04/03 10:53:44 execer.go:130: stage build end...
 2023/04/03 10:53:44 execer.go:136: ||FINISH||\t❌ OMG failed
 
+
+script returned exit code 0
+script returned exit code 1
+script returned exit code 143
+
 `
