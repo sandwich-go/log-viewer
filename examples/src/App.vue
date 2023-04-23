@@ -48,7 +48,7 @@
             }
           }
         }"
-        @event-bus="eventBus"
+        @event-user="eventUser"
         @event-text-copy="textCopy"
         ref="logViewer"
       />
@@ -102,7 +102,7 @@ export default {
     }
   },
   methods: {
-    eventBus({event, text}) {
+    eventUser({event, text}) {
       console.log(event, text)
     },
     textCopy({jsEvent, text}) {

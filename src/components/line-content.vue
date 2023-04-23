@@ -47,7 +47,7 @@ export default {
   methods: {
     emitUserEvent({event, text}) {
       console.error('event-bus ', event, text)
-      // this.$parent.$parent.$parent.$emit('event-user', {event,text});
+      this.$parent.$parent.$parent.$emit('event-user', {event, text})
     },
     emitLinkCopy({jsEvent, text}) {
       this.$parent.$parent.$parent.$emit('event-text-copy', {jsEvent, text})
