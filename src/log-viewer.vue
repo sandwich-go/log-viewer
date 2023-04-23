@@ -20,6 +20,7 @@ import VirtualList from 'vue-virtual-scroll-list'
 import LineWrapper from './components/line-wrapper.vue'
 import LogLoading from './components/loading.vue'
 import parse from './utils'
+import {highlightLine} from './utils/highlight'
 
 export default {
   name: 'LogViewer',
@@ -65,21 +66,7 @@ export default {
     },
     lineStyle: {
       type: Function,
-      default: function({line}) {
-        let style = {}
-        if (
-          line.includes('❌') ||
-          line.includes(' WRN ') ||
-          line.includes(' ERR ') ||
-          line.startsWith('ERROR:') ||
-          line.startsWith('ERROR:') ||
-          line.includes('step is failed')
-        ) {
-          style.background = '#800000'
-          style['font-weight'] = 'bold'
-        }
-        return style
-      }
+      default: highlightLine
     },
     /**
      * The orginal log text shuold be shown
