@@ -50,8 +50,8 @@ declare module '@sandwich-go/log-viewer' {
     autoScroll: boolean
     hasNumber: boolean
     scrollDuration: number
-    lineStyle: (args: {line: number}) => object
-    numberFollowLineStyle: Boolean
+    lineStyle: (args: {line: string}) => object
+    numberFollowLineStyle: boolean
     copy: () => void
   }
 
