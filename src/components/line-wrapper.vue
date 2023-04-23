@@ -6,7 +6,11 @@
       :style="numberFollowLineStyle ? customStyle : {}"
     ></line-number>
     <slot>
-      <line-content :soft-wrap="softWrap" :content="data"></line-content>
+      <line-content
+        :soft-wrap="softWrap"
+        :content="data"
+        @event-text-copy="({event, text}) => copy && copy({event, text})"
+      ></line-content>
     </slot>
   </div>
 </template>
@@ -49,6 +53,7 @@ export default {
         return {}
       }
     },
+    copy: Function,
     softWrap: Boolean,
     numberFollowLineStyle: Boolean,
     hasNumber: Boolean,

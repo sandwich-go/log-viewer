@@ -41,6 +41,7 @@
         :font-size="Number(fontSize)"
         :scroll-duration="1000"
         :log="log"
+        :copy="textCopy"
         ref="logViewer"
       />
     </div>
@@ -57,6 +58,7 @@ export default {
   components: {
     LogViewer
   },
+
   watch: {
     autoScroll: {
       handler() {
@@ -92,6 +94,9 @@ export default {
     }
   },
   methods: {
+    textCopy({event, text}) {
+      console.log(event, text)
+    },
     logViewHeight(diff) {
       const vh = document.querySelector('#measure-vh')
       return vh ? vh.clientHeight - (diff || 0) : 800

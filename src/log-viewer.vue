@@ -40,6 +40,7 @@ export default {
       type: Number,
       default: 12
     },
+    copy: Function,
     /**
      * VirtualList original props
      * Reference: https://github.com/tangbc/vue-virtual-scroll-list
@@ -157,6 +158,7 @@ export default {
         hasNumber: this.hasNumber,
         softWrap: this.softWrap,
         numberFollowLineStyle: this.numberFollowLineStyle,
+        copy: this.copy,
         numberData: {
           number: index + 1
         }

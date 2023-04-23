@@ -14,8 +14,13 @@
       ]"
     >
       <template v-if="item.isUrl">
+        <span
+          @click.self="emitLinkCopy({event: $event, text: item.text})"
+          style="cursor: copy;"
+          >🔗</span
+        >
         <a :href="item.text" target="_blank" style="color:dodgerblue;">{{
-          `🔗 ${item.text}`
+          item.text
         }}</a>
       </template>
       <template v-else>{{ item.text }}</template>
@@ -33,6 +38,9 @@ export default {
     softWrap: Boolean
   },
   methods: {
+    emitLinkCopy({event, text}) {
+      this.$emit('event-text-copy', {event, text})
+    },
     getClass() {
       if (this.softWrap) {
         return 'line-content log-viewer-content-text-soft-wrap'
