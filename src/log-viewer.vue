@@ -63,6 +63,24 @@ export default {
       type: Number,
       default: 0
     },
+    lineStyle: {
+      type: Function,
+      default: function({line}) {
+        let style = {}
+        if (
+          line.includes('❌') ||
+          line.includes(' WRN ') ||
+          line.includes(' ERR ') ||
+          line.startsWith('ERROR:') ||
+          line.startsWith('ERROR:') ||
+          line.includes('step is failed')
+        ) {
+          style.background = '#800000'
+          style['font-weight'] = 'bold'
+        }
+        return style
+      }
+    },
     /**
      * The orginal log text shuold be shown
      */
@@ -112,7 +130,7 @@ export default {
       return 30
     },
     lines() {
-      return parse(this.log)
+      return parse(this.log, this.lineStyle)
     },
     linesCount() {
       return this.lines.length + (this.loading ? 1 : 0)

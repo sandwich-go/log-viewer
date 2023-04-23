@@ -40,7 +40,7 @@ function findUrlsWithFlag(text) {
   return matches
 }
 
-export default log => {
+function logParser(log, lineStyleFunc = undefined) {
   const stringLines = split2Lines(log)
   const stringLinesText = []
   stringLines.forEach(line => {
@@ -48,7 +48,8 @@ export default log => {
       return
     }
     const oneLinePart = ansiParse(line)
-    let oneLinePartNew = {items: [], lineStyle: {}}
+    const lineStyle = lineStyleFunc ? lineStyleFunc({line: line}) : {}
+    let oneLinePartNew = {items: [], lineStyle: lineStyle}
     oneLinePart.forEach(item => {
       findUrlsWithFlag(item.text).forEach(v => {
         let subItem = {
@@ -65,14 +66,6 @@ export default log => {
           oneLinePartNew.lineStyle.background = '#800000'
           oneLinePartNew.lineStyle['font-weight'] = 'bold'
         }
-        if (
-          subItem.text.includes('❌') ||
-          subItem.text.includes(' WRN ') ||
-          subItem.text.includes(' ERR ')
-        ) {
-          oneLinePartNew.lineStyle.background = '#800000'
-          oneLinePartNew.lineStyle['font-weight'] = 'bold'
-        }
         oneLinePartNew.items.push(subItem)
       })
     })
@@ -80,3 +73,5 @@ export default log => {
   })
   return stringLinesText
 }
+
+export default logParser
