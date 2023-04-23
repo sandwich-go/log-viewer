@@ -8,7 +8,8 @@ export const highlightKeys = [
   'error occurred',
   'status:FAILED',
   'build failed',
-  'build error'
+  'build error',
+  'job cancelled'
 ]
 const highlightKeysRegex = new RegExp(highlightKeys.join('|'))
 export function highlightLine({line}) {
