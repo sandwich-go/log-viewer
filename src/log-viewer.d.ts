@@ -52,7 +52,7 @@ declare module '@sandwich-go/log-viewer' {
     scrollDuration: number
     lineStyle: (args: {line: string}) => object
     numberFollowLineStyle: boolean
-    copy: () => void
+    copy:  (args: {event: MouseEvent,text:string}) => void
   }
 
   type LogViewer = Combined<
