@@ -66,4 +66,23 @@ building...
 [90m2023-01-19T15:55:04+08:00[0m [32mINF[0m ABTEST [36mfile_1=[0mab_test1 [36mfile_2=[0mab_test1 [36msheet_1=[0mab_test1@design [36msheet_2=[0mab_test1@ab_tag2
 [90m2023-01-19T15:55:04+08:00[0m [32mINF[0m [E] rawdata: process all sheet(check valid & gen cell data interface) [36mcost=[0m14.010806ms
 [90m2023-01-19T15:55:04+08:00[0m [32mINF[0m [S] rawdata: raw data to proto schema and data for clien
+
+On branch version/1.2
+Your branch is up to date with 'origin/version/1.2'.
+nothing to commit, working tree clean
++ tagName=auto-big_change
++ '[' '' '!=' auto-big_change ']'
++ '[' auto-normal = auto-big_change ']'
++ '[' auto-big_change = auto-big_change ']'
++ '[' auto-big_change == auto-big_change ']'
++ protokitgo-2.5.7-daily.9 sem bump --skip_push --upgrade
++ [[ 1 -ne 0 ]]
++ exit 255
+2023/04/03 10:53:44 engine.go:70: process.exit(255) process finished
+2023/04/03 10:53:44 execer.go:116: stage build failed,
+2023/04/03 10:53:44 execer.go:128: stage build error, 1 error occurred:
+\t*
+2023/04/03 10:53:44 execer.go:130: stage build end...
+2023/04/03 10:53:44 execer.go:136: ||FINISH||\t❌ OMG failed
+
 `

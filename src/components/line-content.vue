@@ -1,7 +1,7 @@
 <template>
-  <div :class="getClass()">
+  <div :class="getClass()" :style="content.lineStyle">
     <span
-      v-for="(item, index) in content"
+      v-for="(item, index) in content.items"
       :key="index"
       :class="[
         {
