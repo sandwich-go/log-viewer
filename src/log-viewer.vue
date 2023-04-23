@@ -68,6 +68,7 @@ export default {
       type: Function,
       default: highlightLine
     },
+    numberFollowLineStyle: Boolean,
     /**
      * The orginal log text shuold be shown
      */
@@ -155,6 +156,7 @@ export default {
         height,
         hasNumber: this.hasNumber,
         softWrap: this.softWrap,
+        numberFollowLineStyle: this.numberFollowLineStyle,
         numberData: {
           number: index + 1
         }

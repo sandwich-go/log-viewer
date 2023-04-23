@@ -1,6 +1,10 @@
 <template>
-  <div class="line-wrapper" :style="customStyle">
-    <line-number v-if="hasNumber" v-bind="numberData"></line-number>
+  <div class="line-wrapper">
+    <line-number
+      v-if="hasNumber"
+      v-bind="numberData"
+      :style="numberFollowLineStyle ? customStyle : {}"
+    ></line-number>
     <slot>
       <line-content :soft-wrap="softWrap" :content="data"></line-content>
     </slot>
@@ -46,6 +50,7 @@ export default {
       }
     },
     softWrap: Boolean,
+    numberFollowLineStyle: Boolean,
     hasNumber: Boolean,
     numberData: Object
   },
