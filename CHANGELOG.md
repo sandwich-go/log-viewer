@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.55](https://github.com/sandwich-go/log-viewer/compare/v1.5.54...v1.5.55) (2023-04-23)
+
 ### [1.5.54](https://github.com/sandwich-go/log-viewer/compare/v1.5.53...v1.5.54) (2023-04-23)
 
 ### [1.5.53](https://github.com/sandwich-go/log-viewer/compare/v1.5.52...v1.5.53) (2023-04-23)
