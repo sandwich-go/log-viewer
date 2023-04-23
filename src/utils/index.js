@@ -1,4 +1,5 @@
 import ansiParse from './ansi-parse'
+import {eventInfoSp, eventSuffix, placeholder, preLine} from './highlight'
 
 const ENCODED_NEWLINE = /\r{0,1}\n(?!\u0008)/
 
@@ -40,14 +41,15 @@ function findUrlsWithFlag(text) {
   return matches
 }
 
-function logParser(log, lineStyleFunc = undefined) {
+function logParser(log, lineStyleFunc, eventMapping = {}) {
+  eventMapping = eventMapping || {}
   const stringLines = split2Lines(log)
   const stringLinesText = []
   stringLines.forEach(line => {
     if (!line) {
       return
     }
-    const oneLinePart = ansiParse(line)
+    const oneLinePart = ansiParse(preLine(line, eventMapping))
     const lineStyle = lineStyleFunc ? lineStyleFunc({line: line}) : {}
     let oneLinePartNew = {items: [], lineStyle: lineStyle}
     oneLinePart.forEach(item => {
@@ -59,6 +61,14 @@ function logParser(log, lineStyleFunc = undefined) {
           bold: item.bold,
           italic: item.italic,
           isUrl: v.isUrl
+        }
+        subItem.isEvent = subItem.text.endsWith(eventSuffix)
+        if (subItem.isEvent) {
+          subItem.isUrl = false
+          const eventParts = subItem.text.split(eventInfoSp)
+          subItem.text = eventParts[1].replace(placeholder, ' ')
+          subItem.event = eventParts[2]
+          subItem.underline = true
         }
         if (subItem.text === 'WRN' || subItem.text === 'ERR') {
           subItem.underline = true

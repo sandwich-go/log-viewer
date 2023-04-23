@@ -36,11 +36,11 @@ export default {
       type: Object,
       default() {}
     },
+    eventMapping: Object,
     fontSize: {
       type: Number,
       default: 12
     },
-    copy: Function,
     /**
      * VirtualList original props
      * Reference: https://github.com/tangbc/vue-virtual-scroll-list
@@ -119,7 +119,7 @@ export default {
       return 30
     },
     lines() {
-      return parse(this.log, this.lineStyle)
+      return parse(this.log, this.lineStyle, this.eventMapping)
     },
     linesCount() {
       return this.lines.length + (this.loading ? 1 : 0)
@@ -158,7 +158,6 @@ export default {
         hasNumber: this.hasNumber,
         softWrap: this.softWrap,
         numberFollowLineStyle: this.numberFollowLineStyle,
-        copy: this.copy,
         numberData: {
           number: index + 1
         }

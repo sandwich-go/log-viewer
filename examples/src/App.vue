@@ -41,7 +41,15 @@
         :font-size="Number(fontSize)"
         :scroll-duration="1000"
         :log="log"
-        :copy="textCopy"
+        :event-mapping="{
+          logserver: {
+            textShow: k => {
+              return `🖥 ${k}`
+            }
+          }
+        }"
+        @event-bus="eventBus"
+        @event-text-copy="textCopy"
         ref="logViewer"
       />
     </div>
@@ -94,8 +102,11 @@ export default {
     }
   },
   methods: {
-    textCopy({event, text}) {
+    eventBus({event, text}) {
       console.log(event, text)
+    },
+    textCopy({jsEvent, text}) {
+      console.log(jsEvent, text)
     },
     logViewHeight(diff) {
       const vh = document.querySelector('#measure-vh')

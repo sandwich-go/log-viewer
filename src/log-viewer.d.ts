@@ -40,6 +40,7 @@ declare module '@sandwich-go/log-viewer' {
   type LogViewerComputed = {}
 
   type LogViewerProps = {
+    eventMapping: object
     virtualAttrs: object
     rowHeight: number
     height: number
@@ -52,7 +53,6 @@ declare module '@sandwich-go/log-viewer' {
     scrollDuration: number
     lineStyle: (args: {line: string}) => object
     numberFollowLineStyle: boolean
-    copy:  (args: {event: MouseEvent,text:string}) => void
   }
 
   type LogViewer = Combined<

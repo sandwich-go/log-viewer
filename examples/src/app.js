@@ -86,8 +86,11 @@ nothing to commit, working tree clean
 2023/04/03 10:53:44 execer.go:136: ||FINISH||\t❌ OMG failed
 
 
+ERROR: pod 未能成功进入稳定运行状态，请查看 logserver 或上面的日志定位问题 🔺🔺🔺
+
 script returned exit code 0
 script returned exit code 1
 script returned exit code 143
+
 
 `

@@ -15,13 +15,20 @@
     >
       <template v-if="item.isUrl">
         <span
-          @click.self="emitLinkCopy({event: $event, text: item.text})"
+          @click.self="emitLinkCopy({jsEvent: $event, text: item.text})"
           style="cursor: copy;"
           >🔗</span
         >
         <a :href="item.text" target="_blank" style="color:dodgerblue;">{{
           item.text
         }}</a>
+      </template>
+      <template v-else-if="item.isEvent">
+        <span
+          @click.self="emitUserEvent({event: item.event, text: item.text})"
+          style="cursor: alias; background:yellowgreen; color: blue;"
+          >{{ item.text }}</span
+        >
       </template>
       <template v-else>{{ item.text }}</template>
     </span>
@@ -38,8 +45,12 @@ export default {
     softWrap: Boolean
   },
   methods: {
-    emitLinkCopy({event, text}) {
-      this.$emit('event-text-copy', {event, text})
+    emitUserEvent({event, text}) {
+      console.error('event-bus ', event, text)
+      // this.$parent.$parent.$parent.$emit('event-user', {event,text});
+    },
+    emitLinkCopy({jsEvent, text}) {
+      this.$parent.$parent.$parent.$emit('event-text-copy', {jsEvent, text})
     },
     getClass() {
       if (this.softWrap) {
