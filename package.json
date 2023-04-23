@@ -107,11 +107,10 @@
     "doc": "vue-styleguidist build",
     "precommit": "pretty-quick --staged",
     "release": "gren release --override",
-    "stdver": "standard-version -m '[skip ci] chore(release): v%s'",
     "test": "jest --verbose"
   },
   "types": "src/log-viewer.d.ts",
   "unpkg": "dist/log-viewer.min.js",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "vue-sfc-cli": "1.12.0"
 }
