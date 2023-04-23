@@ -1,6 +1,6 @@
 {
   "name": "@sandwich-go/log-viewer",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "dist/log-viewer.umd.js",
   "module": "dist/log-viewer.esm.js",
   "publishConfig": {
@@ -8,7 +8,10 @@
   },
   "scripts": {
     "stdver": "standard-version -m '[skip ci] chore(release): v%s'",
-    "build": "npm run build:unpkg & npm run build:es & npm run build:umd"
+    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/log-viewer.esm.js",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/log-viewer.umd.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/log-viewer.min.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
