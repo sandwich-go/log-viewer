@@ -1,21 +1,5 @@
 {
-  "_from": "@sandwich-go/log-viewer@^1.5.0",
-  "_id": "@sandwich-go/log-viewer@1.5.0",
-  "_inBundle": false,
-  "_integrity": "sha512-M26D7tqii6g+8yRRycyTevbaAJhO6FqVhCVpoNAdqJTOJD1D8P9wxt0SKqGuzYGE0AbKogE6UdHC02aVqFSDpw==",
   "_location": "/@sandwich-go/log-viewer",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "@sandwich-go/log-viewer@^1.5.0",
-    "name": "@sandwich-go/log-viewer",
-    "escapedName": "@sandwich-go%2flog-viewer",
-    "scope": "@sandwich-go",
-    "rawSpec": "^1.5.0",
-    "saveSpec": null,
-    "fetchSpec": "^1.5.0"
-  },
   "_requiredBy": [
     "/"
   ],
@@ -129,6 +113,6 @@
   },
   "types": "src/log-viewer.d.ts",
   "unpkg": "dist/log-viewer.min.js",
-  "version": "1.5.15",
+  "version": "1.5.16",
   "vue-sfc-cli": "1.12.0"
 }
