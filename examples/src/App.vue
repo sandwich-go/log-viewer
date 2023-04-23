@@ -49,7 +49,7 @@
 
 <script>
 // import LogViewer from '../../src'
-import LogViewer from '@sandwich-go/log-viewer'
+import LogViewer from '@sandwich-go/log-viewer/src/index'
 import {demoLog} from '@/app'
 
 export default {

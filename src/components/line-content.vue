@@ -1,5 +1,5 @@
 <template>
-  <div class="line-content log-viewer-content-text">
+  <div :class="getClass()">
     <span
       v-for="(item, index) in content"
       :key="index"
@@ -13,15 +13,12 @@
         item.background ? 'log-back-' + item.background : ''
       ]"
     >
-      <template v-if="item.isUrl">
-        🔗
-        <a :href="item.text" target="_blank" style="color:royalblue;">{{
+      <template v-if="item.isUrl"
+        >🔗<a :href="item.text" target="_blank" style="color:royalblue;">{{
           item.text
         }}</a>
       </template>
-      <template v-else>
-        {{ item.text }}
-      </template>
+      <template v-else>{{ item.text }}</template>
     </span>
   </div>
 </template>
@@ -32,7 +29,16 @@ export default {
     /**
      * log text content
      */
-    content: Array
+    content: Array,
+    softWrap: Boolean
+  },
+  methods: {
+    getClass() {
+      if (this.softWrap) {
+        return 'line-content log-viewer-content-text-soft-wrap'
+      }
+      return 'line-content log-viewer-content-text'
+    }
   }
 }
 </script>
@@ -102,5 +108,19 @@ export default {
   .log(magenta);
   .log(cyan);
   .log(white);
+}
+
+// global style
+.log-viewer-content-text {
+  text-align: left;
+  white-space: nowrap;
+}
+// global style
+.log-viewer-content-text-soft-wrap {
+  text-align: left;
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -o-pre-wrap; /* newer Opera */
+  white-space: pre-wrap; /* Chrome; W3C standard */
+  word-wrap: break-word; /* IE */
 }
 </style>

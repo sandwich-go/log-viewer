@@ -12,7 +12,6 @@
     :itemcount="linesCount"
     :itemprops="getLineWrapperProps"
     :onscroll="onscroll"
-    :class="{'log-viewer-soft-wrap': softWrap}"
   >
   </virtual-list>
 </template>
@@ -150,6 +149,7 @@ export default {
       const props = {
         height,
         hasNumber: this.hasNumber,
+        softWrap: this.softWrap,
         numberData: {
           number: index + 1
         }
@@ -214,18 +214,5 @@ export default {
   background-color: #222;
   overflow-x: auto;
   padding: 9px 0;
-}
-// global style
-.log-viewer-content-text {
-  text-align: left;
-  white-space: pre;
-}
-// global style
-.log-viewer-soft-wrap .log-viewer-content-text {
-  text-align: left;
-  white-space: -moz-pre-wrap; /* Firefox */
-  white-space: -o-pre-wrap; /* newer Opera */
-  white-space: pre-wrap; /* Chrome; W3C standard */
-  word-wrap: break-word; /* IE */
 }
 </style>

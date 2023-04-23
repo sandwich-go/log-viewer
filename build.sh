@@ -1,4 +1,4 @@
 #!/bin/sh
-yarn stdver
+npm run  stdver
 
-yarn build
+npm run build

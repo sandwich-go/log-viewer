@@ -1100,10 +1100,10 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@sandwich-go/log-viewer@1.5.49":
-  version "1.5.49"
-  resolved "https://registry.yarnpkg.com/@sandwich-go/log-viewer/-/log-viewer-1.5.49.tgz#1b3680dd6ef649a7aeba472bf7f8327e56d7e564"
-  integrity sha512-5W0p/aSE2TQbQqw3dFoG0W+MGEECYssCZEuTG28q3KbjWqTF1yR2bvp8kcvTHUgACNSe/SfzqRmMA1yKwbJwDQ==
+"@sandwich-go/log-viewer@1.5.53":
+  version "1.5.53"
+  resolved "https://registry.yarnpkg.com/@sandwich-go/log-viewer/-/log-viewer-1.5.53.tgz#5c2cd67b04ea5118b62403f2e339b84bb834c564"
+  integrity sha512-XdDMoZ2wTQhDE1rV065mwCvbxjXbnYpSim4SAv/SkKjFlhjOVhx79dj9hBM9XN6iraPGo/C0HR7tfkWLI4Dw9A==
   dependencies:
     vue-virtual-scroll-list "^1.4.1"
 

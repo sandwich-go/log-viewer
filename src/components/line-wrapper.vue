@@ -2,7 +2,7 @@
   <div class="line-wrapper" :style="customStyle">
     <line-number v-if="hasNumber" v-bind="numberData"></line-number>
     <slot>
-      <line-content :content="data"></line-content>
+      <line-content :soft-wrap="softWrap" :content="data"></line-content>
     </slot>
   </div>
 </template>
@@ -42,6 +42,7 @@ export default {
         return {}
       }
     },
+    softWrap: Boolean,
     hasNumber: Boolean,
     numberData: Object
   },
@@ -65,10 +66,9 @@ export default {
   display: flex;
   color: #f1f1f1;
   line-height: 20px;
-  //height: 20px;
   //white-space: pre;
-  // word-break: break-all;
-  box-sizing: border-box;
+  //word-break: break-all;
+  //box-sizing: border-box;
   padding-left: 16px;
   padding-right: 16px;
 
