@@ -1,21 +1,43 @@
 {
-  "name": "@sandwich-go/log-viewer",
-  "version": "0.1.12",
-  "main": "dist/log-viewer.umd.js",
-  "module": "dist/log-viewer.esm.js",
-  "publishConfig": {
-    "access": "public"
+  "_from": "@sandwich-go/log-viewer@^1.5.0",
+  "_id": "@sandwich-go/log-viewer@1.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-M26D7tqii6g+8yRRycyTevbaAJhO6FqVhCVpoNAdqJTOJD1D8P9wxt0SKqGuzYGE0AbKogE6UdHC02aVqFSDpw==",
+  "_location": "/@sandwich-go/log-viewer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@sandwich-go/log-viewer@^1.5.0",
+    "name": "@sandwich-go/log-viewer",
+    "escapedName": "@sandwich-go%2flog-viewer",
+    "scope": "@sandwich-go",
+    "rawSpec": "^1.5.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.5.0"
   },
-  "scripts": {
-    "stdver": "standard-version -m '[skip ci] chore(release): v%s'",
-    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/log-viewer.esm.js",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/log-viewer.umd.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/log-viewer.min.js"
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@sandwich-go/log-viewer/-/log-viewer-1.5.0.tgz",
+  "_shasum": "e4d5a3d26c0c5c109609f15399b0bc74320b25c0",
+  "_spec": "@sandwich-go/log-viewer@^1.5.0",
+  "_where": "/Users/wh/prjs/funplus/sandwich-pmt/frontend",
+  "author": {
+    "name": "https://github.com/sandwich-go"
   },
+  "browser": {
+    "./sfc": "src/log-viewer.vue"
+  },
+  "bugs": {
+    "url": "https://github.com/sandwich-go/log-viewer/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
-    "vue-virtual-scroll-list": "1.4.1"
+    "vue-virtual-scroll-list": "^1.4.1"
   },
+  "deprecated": false,
+  "description": "💻 View terminal logs in browser",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-transform-runtime": "^7.4.3",
@@ -45,23 +67,68 @@
     "vue-template-compiler": "2.6.10",
     "webpack": "^4.29.6"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  "files": [
+    "src",
+    "dist"
+  ],
+  "gren": "@sandwich-go/grenrc",
+  "homepage": "https://github.com/sandwich-go/log-viewer#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
+  },
+  "keywords": [
+    "vue",
+    "sfc",
+    "component"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.(js|md|json)": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "main": "dist/log-viewer.umd.js",
+  "module": "dist/log-viewer.esm.js",
+  "name": "@sandwich-go/log-viewer",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandwich-go/log-viewer.git"
+  },
+  "scripts": {
+    "build": "npm run build:unpkg & npm run build:es & npm run build:umd & npm run doc",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/log-viewer.esm.js",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/log-viewer.umd.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/log-viewer.min.js",
+    "dev": "vue-styleguidist server",
+    "doc": "vue-styleguidist build",
+    "precommit": "pretty-quick --staged",
+    "release": "gren release --override",
+    "stdver": "standard-version -m '[skip ci] chore(release): v%s'",
+    "test": "jest --verbose"
+  },
+  "types": "src/log-viewer.d.ts",
+  "unpkg": "dist/log-viewer.min.js",
+  "version": "1.5.15",
+  "vue-sfc-cli": "1.12.0"
 }
