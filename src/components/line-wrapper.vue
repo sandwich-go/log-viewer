@@ -20,13 +20,16 @@ export default {
      * line-content attrs
      */
     data: {
-      type: Array,
+      type: Object,
       default() {
-        return [
-          {
-            text: ''
-          }
-        ]
+        return {
+          lineStyle: {},
+          items: [
+            {
+              text: ''
+            }
+          ]
+        }
       }
     },
     /**

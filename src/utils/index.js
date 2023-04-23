@@ -39,6 +39,7 @@ function findUrlsWithFlag(text) {
 
   return matches
 }
+
 export default log => {
   const stringLines = split2Lines(log)
   const stringLinesText = []
@@ -66,8 +67,8 @@ export default log => {
         }
         if (
           subItem.text.includes('❌') ||
-          subItem.includes(' WRN ') ||
-          subItem.includes(' ERR ')
+          subItem.text.includes(' WRN ') ||
+          subItem.text.includes(' ERR ')
         ) {
           oneLinePartNew.lineStyle.background = '#800000'
           oneLinePartNew.lineStyle['font-weight'] = 'bold'

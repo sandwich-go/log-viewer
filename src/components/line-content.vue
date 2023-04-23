@@ -29,7 +29,7 @@ export default {
     /**
      * log text content
      */
-    content: Array,
+    content: Object,
     softWrap: Boolean
   },
   methods: {
