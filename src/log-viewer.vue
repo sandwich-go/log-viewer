@@ -12,6 +12,8 @@
     :itemcount="linesCount"
     :itemprops="getLineWrapperProps"
     :onscroll="onscroll"
+    :estimate-size="80"
+    :item-class="'log-viewer-item'"
   >
   </virtual-list>
 </template>
@@ -36,6 +38,7 @@ export default {
       type: Object,
       default() {}
     },
+    background: [Function, Object],
     eventMapping: Object,
     fontSize: {
       type: Number,
@@ -158,6 +161,7 @@ export default {
         hasNumber: this.hasNumber,
         softWrap: this.softWrap,
         numberFollowLineStyle: this.numberFollowLineStyle,
+        background: this.background,
         numberData: {
           number: index + 1
         }

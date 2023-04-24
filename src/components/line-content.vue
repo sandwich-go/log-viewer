@@ -143,6 +143,8 @@ export default {
   white-space: -moz-pre-wrap; /* Firefox */
   white-space: -o-pre-wrap; /* newer Opera */
   white-space: pre-wrap; /* Chrome; W3C standard */
-  word-wrap: break-word; /* IE */
+  width: auto;
+  max-width: calc(100% - 40px);
+  word-wrap: break-word;
 }
 </style>
