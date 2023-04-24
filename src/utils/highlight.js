@@ -11,6 +11,7 @@ export const highlightKeys = [
   'build error',
   'job cancelled'
 ]
+
 const highlightKeysRegex = new RegExp(highlightKeys.join('|'))
 export function highlightLine({line}) {
   let style = {}

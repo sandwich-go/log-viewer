@@ -44,14 +44,18 @@
         :event-mapping="{
           logserver: {
             textShow: k => {
-              return `🖥 ${k}`
+              return `====> ${k} <====`
             }
           }
         }"
         @event-user="eventUser"
         @event-text-copy="textCopy"
         ref="logViewer"
-      />
+      >
+        <template v-slot:logserver="{}">
+          1111111111111
+        </template>
+      </log-viewer>
     </div>
   </div>
 </template>

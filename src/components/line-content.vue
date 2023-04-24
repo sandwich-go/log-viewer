@@ -29,6 +29,7 @@
           style="cursor: alias; background:yellowgreen; color: blue;"
           >{{ item.text }}</span
         >
+        <slot :name="item.event" :item="item"></slot>
       </template>
       <template v-else>{{ item.text }}</template>
     </span>
@@ -46,7 +47,6 @@ export default {
   },
   methods: {
     emitUserEvent({event, text}) {
-      console.error('event-bus ', event, text)
       this.$parent.$parent.$parent.$emit('event-user', {event, text})
     },
     emitLinkCopy({jsEvent, text}) {

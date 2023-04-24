@@ -66,14 +66,15 @@ function logParser(log, lineStyleFunc, eventMapping = {}) {
         if (subItem.isEvent) {
           subItem.isUrl = false
           const eventParts = subItem.text.split(eventInfoSp)
-          subItem.text = eventParts[1].replace(placeholder, ' ')
+          subItem.text = eventParts[1].replaceAll(placeholder, ' ')
           subItem.event = eventParts[2]
           subItem.underline = true
         }
         if (subItem.text === 'WRN' || subItem.text === 'ERR') {
           subItem.underline = true
           subItem.background = 'white'
-          oneLinePartNew.lineStyle.background = '#800000'
+          oneLinePartNew.lineStyle.background =
+            subItem.text === 'WRN' ? '#955d46' : '#cc3300'
           oneLinePartNew.lineStyle['font-weight'] = 'bold'
         }
         oneLinePartNew.items.push(subItem)
