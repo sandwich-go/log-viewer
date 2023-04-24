@@ -72,9 +72,10 @@ function logParser(log, lineStyleFunc, eventMapping = {}) {
         }
         if (subItem.text === 'WRN' || subItem.text === 'ERR') {
           subItem.underline = true
-          subItem.background = 'white'
+          subItem.background = 'yellow'
+          oneLinePartNew.lineStyle.color = 'black'
           oneLinePartNew.lineStyle.background =
-            subItem.text === 'WRN' ? '#955d46' : '#cc3300'
+            subItem.text === 'WRN' ? '#FF9966' : '#cc3300'
           oneLinePartNew.lineStyle['font-weight'] = 'bold'
         }
         oneLinePartNew.items.push(subItem)
