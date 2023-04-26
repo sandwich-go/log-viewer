@@ -3,9 +3,10 @@
     <select
       v-if="logSessions.length"
       v-model="currentSession"
-      style="width: 100%;"
+      style="width: 100%; font-size: 13px; border-radius: 0;"
       v-on:change="toSession"
     >
+      <option value="0" disabled>select session</option>
       <option
         v-for="option in logSessions"
         :key="option.value"
