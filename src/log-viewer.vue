@@ -1,19 +1,25 @@
 <template>
   <div>
     <select
-      v-if="logSessions.length"
+      v-if="!sessionSlot && logSessions.length"
       v-model="currentSession"
       style="width: 100%; font-size: 13px; border-radius: 0;"
-      v-on:change="toSession"
+      v-on:change="toSession(currentSession)"
     >
       <option value="0" disabled>select session</option>
       <option
         v-for="option in logSessions"
         :key="option.value"
+        class="session-highlight"
         :value="option.value"
-        >{{ option.text }}</option
+        >{{ option.label }}</option
       >
     </select>
+    <slot
+      :name="sessionSlot"
+      :options="logSessions"
+      :onChange="toSession"
+    ></slot>
     <virtual-list
       class="log-viewer"
       v-bind:style="logViewerStyle"
@@ -118,7 +124,8 @@ export default {
     scrollDuration: {
       type: Number,
       default: 0
-    }
+    },
+    sessionSlot: String
   },
   data() {
     return {
@@ -161,7 +168,7 @@ export default {
           if (currentSession !== '') {
             let indexPart = `${currentSessionIndex}`
             this.logSessions.push({
-              text: `@${indexPart.padStart(
+              label: `@${indexPart.padStart(
                 String(lineParsed.length).length,
                 '0'
               )} ${currentSession}`,
@@ -202,7 +209,11 @@ export default {
     forceRender() {
       this.$refs.virtualList.forceRender()
     },
-    toSession() {
+    setCurrentSession(v) {
+      this.currentSession = v
+    },
+    toSession(to) {
+      this.currentSession = to
       this.setScrollTop(this.currentSession - 1)
     },
     //
@@ -278,5 +289,10 @@ export default {
   background-color: #222;
   overflow-x: auto;
   padding: 9px 0;
+}
+
+.session-highlight {
+  background-color: red;
+  z-index: 10000;
 }
 </style>

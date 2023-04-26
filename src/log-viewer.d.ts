@@ -54,7 +54,7 @@ declare module '@sandwich-go/log-viewer' {
     lineStyle: (args: {line: string,isSessionStart:boolean}) => object
     isSessionStart: (args: {line: string}) => boolean
     numberFollowLineStyle: boolean
-
+    sessionSlot: String
   }
 
   type LogViewer = Combined<

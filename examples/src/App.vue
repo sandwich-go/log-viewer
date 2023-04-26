@@ -49,6 +49,7 @@
         :font-size="Number(fontSize)"
         :scroll-duration="1000"
         :log="log"
+        :session-slot="`session-select-slot`"
         :event-mapping="{
           logserver: {
             textShow: k => {
@@ -60,8 +61,24 @@
         @event-text-copy="textCopy"
         ref="logViewer"
       >
-        <template v-slot:logserver="{}">
-          1111111111111
+        <template v-slot:session-select-slot="{options, onChange}">
+          <select
+            v-if="options.length"
+            v-model="currentSession"
+            style="width: 100%; font-size: 13px; border-radius: 0;"
+            v-on:change="onChange(currentSession)"
+          >
+            <option value="0" disabled>select session</option>
+            <option
+              v-for="option in options"
+              :key="option.value"
+              class="session-highlight"
+              :value="option.value"
+              ><div style="color: red; background-color: red;">
+                {{ option.label }}
+              </div></option
+            >
+          </select>
         </template>
       </log-viewer>
     </div>
@@ -110,7 +127,8 @@ export default {
       loading: false,
       fontSize: 12,
       customStyle: {},
-      log: demoLog
+      log: demoLog,
+      currentSession: 0
     }
   },
   methods: {
