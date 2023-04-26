@@ -3,7 +3,7 @@
     <line-number
       v-if="hasNumber"
       v-bind="numberData"
-      :style="numberFollowLineStyle ? customStyle : {}"
+      :style="customStyle"
     ></line-number>
     <slot>
       <line-content :soft-wrap="softWrap" :content="data"></line-content>
@@ -13,6 +13,7 @@
 <script>
 import LineContent from './line-content.vue'
 import LineNumber from './line-number.vue'
+
 export default {
   name: 'LineWrapper',
   components: {
@@ -58,13 +59,17 @@ export default {
     customStyle() {
       const height =
         typeof this.height === 'number' ? this.height + 'px' : this.height
-      return Object.assign(
+      let lineStyle = Object.assign(
         {
           lineHeight: height
           // height
         },
         this.comStyle
       )
+      if (this.numberFollowLineStyle) {
+        lineStyle = Object.assign(lineStyle, this.data.lineStyle)
+      }
+      return lineStyle
     }
   }
 }
@@ -74,10 +79,7 @@ export default {
   display: flex;
   color: #f1f1f1;
   line-height: 20px;
-  //white-space: pre;
-  //word-break: break-all;
-  //box-sizing: border-box;
-  padding-left: 16px;
+  //white-space: pre; //word-break: break-all; //box-sizing: border-box; padding-left: 16px;
   padding-right: 16px;
 
   &:hover {

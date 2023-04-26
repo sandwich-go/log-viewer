@@ -36,6 +36,14 @@
         :has-number="lineNumber"
         :custom-style="customStyle"
         :auto-scroll="autoScroll"
+        :is-session-start="
+          ({line}) => {
+            if (line.startsWith('+ kubectl logs')) {
+              return `${line} ### POD启动日志`
+            }
+            return line.startsWith('+')
+          }
+        "
         :height="logViewHeight(80)"
         :loading="loading"
         :font-size="Number(fontSize)"

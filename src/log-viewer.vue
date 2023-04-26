@@ -1,21 +1,36 @@
 <template>
-  <virtual-list
-    class="log-viewer"
-    v-bind:style="logViewerStyle"
-    ref="virtualList"
-    v-bind="virtualAttrs"
-    :size="rowHeight"
-    :remain="remain"
-    :bench="0"
-    :start="start"
-    :item="LineWrapper"
-    :itemcount="linesCount"
-    :itemprops="getLineWrapperProps"
-    :onscroll="onscroll"
-    :estimate-size="80"
-    :item-class="'log-viewer-item'"
-  >
-  </virtual-list>
+  <div>
+    <select
+      v-if="logSessions.length"
+      v-model="currentSession"
+      style="width: 100%;"
+      v-on:change="toSession"
+    >
+      <option
+        v-for="option in logSessions"
+        :key="option.value"
+        :value="option.value"
+        >{{ option.text }}</option
+      >
+    </select>
+    <virtual-list
+      class="log-viewer"
+      v-bind:style="logViewerStyle"
+      ref="virtualList"
+      v-bind="virtualAttrs"
+      :size="rowHeight"
+      :remain="remain"
+      :bench="0"
+      :start="start"
+      :item="LineWrapper"
+      :itemcount="linesCount"
+      :itemprops="getLineWrapperProps"
+      :onscroll="onscroll"
+      :estimate-size="80"
+      :item-class="'log-viewer-item'"
+    >
+    </virtual-list>
+  </div>
 </template>
 <script>
 import VirtualList from 'vue-virtual-scroll-list'
@@ -72,6 +87,7 @@ export default {
       type: Function,
       default: highlightLine
     },
+    isSessionStart: Function,
     numberFollowLineStyle: Boolean,
     /**
      * The orginal log text shuold be shown
@@ -108,7 +124,9 @@ export default {
       start: 0,
       scrollStart: 0,
       animate: null,
-      LineWrapper
+      LineWrapper,
+      currentSession: 0,
+      logSessions: []
     }
   },
   computed: {
@@ -122,7 +140,37 @@ export default {
       return 30
     },
     lines() {
-      return parse(this.log, this.lineStyle, this.eventMapping)
+      const lineParsed = parse(
+        this.log,
+        this.lineStyle,
+        this.eventMapping,
+        this.isSessionStart
+      )
+      this.logSessions = []
+      // 合并连续的session start
+      let currentSession = ''
+      let currentSessionIndex = 0
+      lineParsed.forEach((item, index) => {
+        if (item.isSessionStart) {
+          if (currentSession === '') {
+            currentSessionIndex = index + 1
+          }
+          currentSession = `${currentSession}${item.session}`
+        } else {
+          if (currentSession !== '') {
+            let indexPart = `${currentSessionIndex}`
+            this.logSessions.push({
+              text: `@${indexPart.padStart(
+                String(lineParsed.length).length,
+                '0'
+              )} ${currentSession}`,
+              value: currentSessionIndex
+            })
+            currentSession = ''
+          }
+        }
+      })
+      return lineParsed
     },
     linesCount() {
       return this.lines.length + (this.loading ? 1 : 0)
@@ -152,6 +200,9 @@ export default {
      */
     forceRender() {
       this.$refs.virtualList.forceRender()
+    },
+    toSession() {
+      this.setScrollTop(this.currentSession - 1)
     },
     //
     getLineWrapperProps(index) {

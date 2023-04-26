@@ -1,96 +1,991 @@
 export const demoLog = `
-2023/01/19 15:54:57 execer.go:100: ||START||\tbuild 1431 , total stages:2
-2023/01/19 15:54:57 execer.go:102: stage build begin...
-2023/01/19 15:54:57 engine.go:46: process started, process.pid:59433
-+ echo 'using FormSchema'
-using FormSchema
-+ echo logLevel1
-logLevel1
-+ echo 'checkerHost http://sample-demo-game-online.auto.centurygame.io'
-checkerHost http://sample-demo-game-online.auto.centurygame.io
-+ echo 'confChecker '
-confChecker
-+ echo 'ExtValue '
-ExtValue
-+ logLevel=' --log_level=0'
-+ pwd
-/Users/wh/prjs/funplus/sandwich-pmt/backend
-+ work_dir=/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2
-+ branch=version/1.2
-+ confdir=/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf
-+ '[' '!' -d /tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf ']'
-+ cd /tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf
-+ git fetch --depth 1 -v
-From bitbucket.org:funplus/sandwich-sample-conf
- = [up to date]      version/1.2 -> origin/version/1.2
-+ [[ 0 -ne 0 ]]
-+ git clean -df
-Removing gen/meta/
-+ git reset --hard origin/version/1.2
-HEAD is now at cf017aa auto commit by cicd pmt
-+ fileChosen=false
-+ fileStr=
-+ translationFiles=
-+ protokitgo=protokitgo-2.5.5-daily.19
-+ echo protokitgo-2.5.5-daily.19
-protokitgo-2.5.5-daily.19
-+ false
-+ [[ -n http://sample-demo-game-online.auto.centurygame.io ]]
-+ '[' true == '' ']'
-+ '[' true '!=' '' ']'
-+ echo building...
-building...
-+ cd /tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf
-+ protokitgo-2.5.5-daily.19 gen --config=/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf/setting.yaml --log_level=0 --branches=version/1.2--log_color=false
-{"level":"warn","time":"2023-01-19T15:55:03+08:00","message":"!!! DEPRECATED FIELD, WILL REMOVE IN FUTURE. FIELDS: golang.enable_queue"}
-[90m2023-01-19T15:55:03+08:00[0m [33mDBG[0m load config file [36mconfig_file=[0m/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf/setting.yaml
-[90m2023-01-19T15:55:03+08:00[0m [33mDBG[0m working dir [36mworking=[0m/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf
-[90m2023-01-19T15:55:03+08:00[0m [31mWRN[0m --branches 参数即将被启用，推荐使用 rawdata.tags，更推荐使用AB TAG特性
-[90m2023-01-19T15:55:03+08:00[0m [32mINF[0m VERSION   : 2.5.5-daily.19-7f3e86d-version/2.5-20230117150154
-[90m2023-01-19T15:55:03+08:00[0m [32mINF[0m ISSUES    : https://bitbucket.org/funplus/devcenter-issues/issues
-[90m2023-01-19T15:55:03+08:00[0m [32mINF[0m DOCUMENTS : https://devcenter.diandian.info/docs-tools-protokitgo
-[90m2023-01-19T15:55:03+08:00[0m [33mDBG[0m load config file [36mconfigs=[0m/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf/setting.yaml
-[90m2023-01-19T15:55:03+08:00[0m [32mINF[0m clean gen path
-[90m2023-01-19T15:55:03+08:00[0m [32mINF[0m chang to working path [36mpath=[0m/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:219 [36mcurrent row=[0m10 [36msheet=[0mDesign
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:932 [36mcurrent row=[0m30 [36msheet=[0mDesign
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:351 [36mcurrent row=[0m156 [36msheet=[0mDesign
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:253 [36mcurrent row=[0m58 [36msheet=[0mRule
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:997 [36mcurrent row=[0m14 [36msheet=[0mDesign
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:833 [36mcurrent row=[0m13 [36msheet=[0mDesign
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:996 [36mcurrent row=[0m42 [36msheet=[0mDesign_backup
-[90m2023-01-19T15:55:04+08:00[0m [33mDBG[0m skip left blank rows, got continuous blank lines more than 4, max row:836 [36mcurrent row=[0m14 [36msheet=[0m"Copy of Design"
-[90m2023-01-19T15:55:04+08:00[0m [32mINF[0m rawdata:load all files [36mcost=[0m274.743934ms [36mpath=[0m/tmp/git_bitbucket_org_funplus_sandwich_sample_conf_git_version_1_2/conf/excel
-[90m2023-01-19T15:55:04+08:00[0m [32mINF[0m [S] rawdata: process all sheet(check valid & gen cell data interface)
-[90m2023-01-19T15:55:04+08:00[0m [32mINF[0m ABTEST [36mfile_1=[0mab_test1 [36mfile_2=[0mab_test1 [36msheet_1=[0mab_test1@design [36msheet_2=[0mab_test1@ab_tag1
-[90m2023-01-19T15:55:04+08:00[0m [32mINF[0m ABTEST [36mfile_1=[0mab_test1 [36mfile_2=[0mab_test1 [36msheet_1=[0mab_test1@design [36msheet_2=[0mab_test1@ab_tag2
-[90m2023-01-19T15:55:04+08:00[0m [32mINF[0m [E] rawdata: process all sheet(check valid & gen cell data interface) [36mcost=[0m14.010806ms
-[90m2023-01-19T15:55:04+08:00[0m [32mINF[0m [S] rawdata: raw data to proto schema and data for clien
++ sh /data/jenkins/workspace/am3/prod/gate/_cicd_/deployment/common/scripts/dino.sh wait-all-pods-running-once
+--------------- pod 运行状态检测 ---------------
+规则说明:
+- 运行状态检测过程只检测本次拉起的 pod，即 pod 的 label 中 xid=ch37g4jilofeu6a2supg 的
+- 在检测到目标 pod 均进入 Running 后，如果连续 10 次检测到它们保持在 Running 状态则认为服务正常启动
 
-On branch version/1.2
-Your branch is up to date with 'origin/version/1.2'.
-nothing to commit, working tree clean
-+ tagName=auto-big_change
-+ '[' '' '!=' auto-big_change ']'
-+ '[' auto-normal = auto-big_change ']'
-+ '[' auto-big_change = auto-big_change ']'
-+ '[' auto-big_change == auto-big_change ']'
-+ protokitgo-2.5.7-daily.9 sem bump --skip_push --upgrade
-+ [[ 1 -ne 0 ]]
-+ exit 255
-2023/04/03 10:53:44 engine.go:70: process.exit(255) process finished
-2023/04/03 10:53:44 execer.go:116: stage build failed,
-2023/04/03 10:53:44 execer.go:128: stage build error, 1 error occurred:
-\t*
-2023/04/03 10:53:44 execer.go:130: stage build end...
-2023/04/03 10:53:44 execer.go:136: ||FINISH||\t❌ OMG failed
+namespace  : am3-prod-online
+service    : gate
+xid        : ch37g4jilofeu6a2supg
+replicas   : 1
 
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   1          18s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
 
-ERROR: pod 未能成功进入稳定运行状态，请查看 logserver 或上面的日志定位问题 🔺🔺🔺
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   1          21s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
 
-script returned exit code 0
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    2          24s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    2          27s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    2          30s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   2          33s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   2          36s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   2          39s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   2          42s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   2          45s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   2          48s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    3          51s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    3          54s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    3          57s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    3          60s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          63s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          66s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          69s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          72s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          75s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          78s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          81s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          84s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          87s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          90s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          93s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   3          96s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     Error    4          99s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    4          102s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    4          105s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    4          108s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    4          111s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          114s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          117s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m    env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m3s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m6s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m9s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m12s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m15s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m18s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m21s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m24s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m27s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m30s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m33s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m36s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m39s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m42s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m45s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m48s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m51s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m54s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          2m57s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          3m    env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          3m2s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   4          3m5s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    5          3m8s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     Error    5          3m11s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     Error    5          3m14s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     Error    5          3m17s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     Error    5          3m20s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m23s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m26s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m29s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m32s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m35s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m38s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m41s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m44s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m47s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m50s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m53s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m56s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          3m59s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m2s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m5s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m8s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m11s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m14s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m17s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m20s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m23s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m26s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m29s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m32s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m35s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m38s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m41s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m44s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m47s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m50s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m53s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m56s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          4m59s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m2s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m5s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m8s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m11s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m14s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m17s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m20s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m23s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m26s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m29s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m32s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m35s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m38s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m41s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m44s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m47s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m50s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m52s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m55s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   5          5m58s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    6          6m1s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    6          6m4s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS   RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     Error    6          6m7s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m10s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m13s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m16s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m19s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m22s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m25s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m28s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m31s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m34s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m37s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m40s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m43s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m46s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m49s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m52s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m55s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          6m58s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m1s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m4s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m7s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m10s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m13s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m16s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m19s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m22s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m25s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m28s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m31s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m34s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m37s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m40s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m43s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m46s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m49s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m52s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m55s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          7m58s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m1s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m4s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m7s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m10s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m13s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m16s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m19s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m22s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m25s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m28s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m31s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m34s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m37s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m39s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m42s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m45s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m48s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m51s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m54s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          8m57s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m    env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m3s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m6s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE    LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m9s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m12s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m15s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m18s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m21s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m23s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m26s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m29s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m32s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m35s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m38s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m41s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m44s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m47s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m50s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m53s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m56s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE     LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          9m59s   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          10m   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          10m   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          10m   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          10m   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          10m   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
+
+运行中/副本数: 0/1, 运行中的 pod 数量低于预期副本数量，2s 后将进行下一次检测
+Sending interrupt signal to process
+Unable to connect to the server: getting credentials: exec: executable aws failed with exit code -1
 script returned exit code 1
-script returned exit code 143
++ kubectl logs --tail=200 -n am3-prod-online -l service=gate,xid=ch37g4jilofeu6a2supg
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FLAG                                        ENV               TYPE    USAGE
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--gate_conf                                 GATE_CONF         string  |Y| gate_conf (default "/etc/conf/service/gate_spec.yaml")
+--sandwich_build_info                       -                 string  |-| sandwich_base_command flag:sandwich_build_info default:false (default "false")
+--sandwich_monitor_enable_p100              -                 string  |-| sandwich_base_command flag:sandwich_monitor_enable_p100 default:false (default "false")
+--sandwich_monitor_enable_p50               -                 string  |-| sandwich_base_command flag:sandwich_monitor_enable_p50 default:false (default "false")
+--sandwich_monitor_enable_p95               -                 string  |-| sandwich_base_command flag:sandwich_monitor_enable_p95 default:true (default "true")
+--sandwich_monitor_enable_p99               -                 string  |-| sandwich_base_command flag:sandwich_monitor_enable_p99 default:true (default "true")
+--sandwich_registry_env                     -                 string  |-| sandwich_base_command flag:sandwich_registry_env default:
+--sandwich_registry_stat_reporter           -                 string  |-| sandwich_base_command flag:sandwich_registry_stat_reporter default:false (default "false")
+--sandwich_registry_stat_reporter_interval  -                 string  |-| sandwich_base_command flag:sandwich_registry_stat_reporter_interval default:1m (default "1m")
+--sandwich_serror_stack                     -                 string  |-| sandwich_base_command flag:sandwich_serror_stack default:false (default "false")
+--sandwich_sip_host                         -                 string  |-| sandwich_base_command flag:sandwich_sip_host default:
+--sandwich_slog_debug                       -                 string  |-| sandwich_base_command flag:sandwich_slog_debug default:false (default "false")
+--sandwich_slog_disable                     -                 string  |-| sandwich_base_command flag:sandwich_slog_disable default:false (default "false")
+--sandwich_slog_info                        -                 string  |-| sandwich_base_command flag:sandwich_slog_info default:true (default "true")
+--sandwich_topology_render                  -                 string  |-| sandwich_base_command flag:sandwich_topology_render default:true (default "true")
+--selector_router                           SELECTOR_ROUTER   string  |Y| selector_router (default "/etc/conf/service/selector_router.yaml")
+--xconf_flag_files                          XCONF_FLAG_FILES  string  |M| xconf files provided by flag, file slice, split by ,
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Powered by: https://github.com/sandwich-go/xconf
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2023-04-14T12:22:16+08:00\tCreate jenkins job map[cluster_name:local-dev context:. deployment_branch:2.5.0 dingtalk_sec:SEC9499b69733e90c1b25fea5765c2bf22ae2fc878911009a83bf6468fc1e1b874c dingtalk_token:d713d875f000a3a026697ed96e9afccba0af8817c8f66a62c27ab425f998d204 dockerfile:k8s/vms/Dockerfile env_name:gate-test image_customized: image_name:backend instances_count:2 is_conf:false operation:deploy pmt_username:jianwei.ma previous_image:harbor.centurygame.com/sample/backend:version-1.3-cgrp85a0nhkd8hsl1m30 previous_revision:f1c9ae2 project:sample service_branch:version/1.3 service_name:backend service_repo:git@bitbucket.org:funplus/sandwich-sample-server.git service_type:sandwich stage:staging values:ZGVwbG95bWVudDoKICBlbnZzOgogIC0gbmFtZTogc3lzX2Vudl9uYW1lCiAgICB2YWx1ZTogZ2F0ZS10ZXN0CiAgLSBuYW1lOiBzZXJ2aWNlX3Ztc193YXRjaF9ldGNkCiAgICB2YWx1ZTogZXRjZC5zYW1wbGUtcmVzb3VyY2VzLW9ubGluZToyMzc5CiAgLSBuYW1lOiBFVENEX0VORFBPSU5UUwogICAgdmFsdWU6IGV0Y2Quc2FtcGxlLXJlc291cmNlcy1vbmxpbmU6MjM3OQogIC0gbmFtZTogc3lzX2NkX3hpZAogICAgdmFsdWU6IGNnc2Q5dGEwbmhrZDhoc2xnaGswCiAgLSBuYW1lOiBzeXNfY29uZl9wYXRoX3NlcnZpY2UKICAgIHZhbHVlOiAvZXRjL2NvbmYvc2VydmljZQogIC0gbmFtZTogRVRDRF9FTkFCTEUKICAgIHZhbHVlOiAidHJ1ZSIKICAtIG5hbWU6IHNlcnZpY2VfdGNwX3BvcnQKICAgIHZhbHVlOiAiMTEwMDEiCiAgLSBuYW1lOiBzeXN0ZW1faHBhX21lbQogICAgdmFsdWU6ICI3MCIKICAtIG5hbWU6IHN5c19jZF9zZXJ2aWNlCiAgICB2YWx1ZTogYmFja2VuZAogIC0gbmFtZTogREFUQUJBU0VfTVlTUUxfSE9TVAogICAgdmFsdWU6IDEwLjE5Mi40LjgKICAtIG5hbWU6IFJFRElTX0FERFJTCiAgICB2YWx1ZTogcmVkaXMuc2FtcGxlLXJlc291cmNlcy1vbmxpbmU6NjM3OQogIC0gbmFtZTogc2VydmljZV9yZWdpc3RyeV9ldGNkCiAgICB2YWx1ZTogZXRjZC5zYW1wbGUtcmVzb3VyY2VzLW9ubGluZToyMzc5CiAgLSBuYW1lOiBzZXJ2aWNlX3Ztc193YXRjaF9wYXRoCiAgICB2YWx1ZTogL3Rlc3Qvdm1zL3Jlc291cmNlX3ZlcnNpb24uanNvbgogIC0gbmFtZTogc3lzX2NkX2dyYWNlZnVsCiAgICB2YWx1ZTogIjAiCiAgLSBuYW1lOiBzeXNfc3RhZ2UKICAgIHZhbHVlOiBzdGFnaW5nCiAgLSBuYW1lOiBnYXRlX2tjcF9ob3N0CiAgICB2YWx1ZTogZ2F0ZTo4OTkxCiAgLSBuYW1lOiBzZXJ2aWNlX3JlZ2lzdHJ5X3BhdGhfaHR0cAogICAgdmFsdWU6IC9zYW5kd2ljaC9zZXJ2aWNlL3Rlc3QvaHR0cC8KICAtIG5hbWU6IHNlcnZpY2VfaHR0cF9wb3J0CiAgICB2YWx1ZTogIjEyMDAxIgogIC0gbmFtZTogc3lzX2NvbmZfcGF0aF9lbnYKICAgIHZhbHVlOiAvZXRjL2NvbmYvZW52CiAgLSBuYW1lOiBFVENEX01JQ1JPX0VORFBPSU5UUwogICAgdmFsdWU6IGV0Y2Quc2FtcGxlLXJlc291cmNlcy1vbmxpbmU6MjM3OQogIC0gbmFtZTogc2VydmljZV9zZXJ2ZXJfbmFtZQogICAgdmFsdWU6IHNlcnZlcl8xCiAgLSBuYW1lOiBzeXN0ZW1faHBhX2NwdQogICAgdmFsdWU6ICI4MCIKICAtIG5hbWU6IHN5c3RlbV9kZXBsb3ltZW50X3RhZwogICAgdmFsdWU6ICIiCiAgLSBuYW1lOiBldGNkCiAgICB2YWx1ZTogZXRjZC5zYW1wbGUtcmVzb3VyY2VzLW9ubGluZToyMzc5CiAgLSBuYW1lOiBEQVRBQkFTRV9NWVNRTF9QT1JUCiAgICB2YWx1ZTogIjMzMDgiCiAgLSBuYW1lOiBEQVRBQkFTRV9NQVhfSURMRV9DT05OUwogICAgdmFsdWU6ICIxMjgiCiAgLSBuYW1lOiBzZXJ2aWNlX3Ztc19lbmFibGVfbGlnaHRob3VzZV9jaGVjawogICAgdmFsdWU6ICJmYWxzZSIKICAtIG5hbWU6IGVuYWJsZV9rY3AKICAgIHZhbHVlOiAidHJ1ZSIKICAtIG5hbWU6IGdhdGVfd3NfaG9zdAogICAgdmFsdWU6IGdhdGU6ODk5MAogIC0gbmFtZTogc2VydmljZV9jb2RlYwogICAgdmFsdWU6IHByb3RvX3Byb3RvCiAgLSBuYW1lOiBzZXJ2aWNlX2VuYWJsZV9lbmNyeXB0CiAgICB2YWx1ZTogImZhbHNlIgogIC0gbmFtZTogc2VydmljZV9nYXRlX2JhY2tlbmRfZXRjZAogICAgdmFsdWU6IGV0Y2Quc2FtcGxlLXJlc291cmNlcy1vbmxpbmU6MjM3OQogIC0gbmFtZTogc3lzX2NkX2VudgogICAgdmFsdWU6IGdhdGUtdGVzdAogIC0gbmFtZTogc3lzX2NkX3N0YWdlCiAgICB2YWx1ZTogc3RhZ2luZwogIC0gbmFtZTogdGNwX2Nvbm4KICAgIHZhbHVlOiAiMTAwIgogIC0gbmFtZTogZ2F0ZV90Y3BfaG9zdAogICAgdmFsdWU6IGdhdGU6ODk4OQogIC0gbmFtZTogREFUQUJBU0VfTUFYX09QRU5fQ09OTlMKICAgIHZhbHVlOiAiMTI4IgogIC0gbmFtZTogUkVESVNfQ0xVU1RFUgogICAgdmFsdWU6ICJ0cnVlIgogIC0gbmFtZTogc3lzX2NkX3Byb2plY3QKICAgIHZhbHVlOiBzYW1wbGUKICAtIG5hbWU6IHdzX2Nvbm4KICAgIHZhbHVlOiAiMTAwIgogIC0gbmFtZToga2NwX2Nvbm4KICAgIHZhbHVlOiAiMTAwIgogIC0gbmFtZTogREFUQUJBU0VfVElNRU9VVAogICAgdmFsdWU6IDE1cwogIC0gbmFtZTogZXRjZF9lbmRwb2ludHMKICAgIHZhbHVlOiBldGNkLnNhbXBsZS1yZXNvdXJjZXMtb25saW5lOjIzNzkKICBsaWZlY3ljbGU6CiAgICBwb3N0U3RhcnQ6CiAgICAgIGVuYWJsZWQ6IGZhbHNlCiAgICBwcmVTdG9wOgogICAgICBlbmFibGVkOiB0cnVlCiAgbGl2ZW5lc3NQcm9iZToKICAgIGVuYWJsZWQ6IGZhbHNlCiAgbWF4R3JhY2VmdWxUZXJtaW5hdGlvblNlYzogMTgwMAogIHBvcnRzOgogIC0gY29udGFpbmVyUG9ydDogMTIwMDEKICAgIGV4cG9zZWQ6IHRydWUKICAgIGhvc3Q6IHNhbXBsZS1nYXRlLXRlc3QtYmFja2VuZC1zdGFnaW5nLmF1dG8uY2VudHVyeWdhbWUuaW8KICAgIGhvc3RQYXRoOiAiIgogICAgbmFtZTogIjEyMDAxIgogICAgcHJvdG9jb2w6IEhUVFAKICByZWFkaW5lc3NQcm9iZToKICAgIGVuYWJsZWQ6IGZhbHNlCiAgcmVwbGljYXM6IDEKICByZXNvdXJjZXM6CiAgICBsaW1pdHM6CiAgICAgIGNwdTogMjAwMG0KICAgICAgbWVtb3J5OiA0MDAwTQogICAgcmVxdWVzdHM6CiAgICAgIGNwdTogMjAwMG0KICAgICAgbWVtb3J5OiA0MDAwTQpocGE6CiAgZW5hYmxlZDogZmFsc2UKICBtYXhSZXBsaWNhczogMjAKICBtZXRyaWNzOiB8CiAgICAtIHJlc291cmNlOgogICAgICAgIG5hbWU6IGNwdQogICAgICAgIHRhcmdldDoKICAgICAgICAgIGF2ZXJhZ2VVdGlsaXphdGlvbjogODAKICAgICAgICAgIHR5cGU6IFV0aWxpemF0aW9uCiAgICAgIHR5cGU6IFJlc291cmNlCiAgICAtIHJlc291cmNlOgogICAgICAgIG5hbWU6IG1lbW9yeQogICAgICAgIHRhcmdldDoKICAgICAgICAgIGF2ZXJhZ2VVdGlsaXphdGlvbjogNzAKICAgICAgICAgIHR5cGU6IFV0aWxpemF0aW9uCiAgICAgIHR5cGU6IFJlc291cmNlCiAgbWluUmVwbGljYXM6IDEK xid:cgsd9ta0nhkd8hslghk0]
+panic: not find config file
+
+goroutine 1 [running]:
+bitbucket.org/funplus/gate/utils.PanicIfErr(...)
+\t/app/utils/errors.go:45
+bitbucket.org/funplus/gate/selector/registry.MustNewRegistryConfManager({0xc0000ced50, 0x26}, {0x11dde88, 0xc00012a9c0})
+\t/app/selector/registry/conf_mgr.go:28 +0x14e
+bitbucket.org/funplus/gate/selector/registry.MustNewRegistryRouter({0xc0000ced50, 0x26}, {0x11dde88, 0xc00012a9c0}, {0x0, 0x0, 0x0})
+\t/app/selector/registry/router.go:34 +0x85
+main.newSelector({0xc0000ced50, 0x26})
+\t/app/cmd/gate/main.go:42 +0xba
+main.main()
+\t/app/cmd/gate/main.go:30 +0x99
++ kubectl get pod -n am3-prod-online -l service=gate,xid=ch37g4jilofeu6a2supg --show-labels
+NAME                   READY   STATUS             RESTARTS   AGE   LABELS
+gate-ddd54859f-lzdlc   0/1     CrashLoopBackOff   6          10m   env_name=prod,pod-template-hash=ddd54859f,project=am3,service=gate,stage=online,xid=ch37g4jilofeu6a2supg
++ env
++ LC_COLLATE=C
++ sort
+BUILD_DISPLAY_NAME=#1 gate@xid:ch37g4jilofeu6a2supg
+BUILD_ID=1
+BUILD_NUMBER=1
+BUILD_TAG=jenkins-am3-prod-gate-1
+BUILD_URL=http://pmt.centurygame.io/job/am3/job/prod/job/gate/1/
+BUILD_USER=robot.devops
+BUILD_USER_EMAIL=robot.devops
+BUILD_USER_FIRST_NAME=robot.devops
+BUILD_USER_ID=robot.devops
+CI=true
+EXECUTOR_NUMBER=12
+GIT_BRANCH=origin/2.5.0
+GIT_CHECKOUT_DIR=_cicd_/deployment
+GIT_COMMIT=3233e10463167c58c8cac3978d3d048c8249fee5
+GIT_URL=git@bitbucket.org:funplus/deployment.git
+HOME=/root
+HUDSON_COOKIE=ef42a82a-0125-4872-9ce5-0a2848261151
+HUDSON_HOME=/data/jenkins
+HUDSON_SERVER_COOKIE=f1ca1b730ba0a134
+HUDSON_URL=http://pmt.centurygame.io/
+JENKINS_HOME=/data/jenkins
+JENKINS_NODE_COOKIE=d0dbec0b-fb8a-428d-8cba-e6fc6a18d28c
+JENKINS_SERVER_COOKIE=durable-b33c966ed40a84f41a0dfd9ee4764d6a00430346450150bc1eba12a200dd50b1
+JENKINS_URL=http://pmt.centurygame.io/
+JOB_BASE_NAME=gate
+JOB_DISPLAY_URL=http://pmt.centurygame.io/job/am3/job/prod/job/gate/display/redirect
+JOB_NAME=am3/prod/gate
+JOB_URL=http://pmt.centurygame.io/job/am3/job/prod/job/gate/
+LABEL=slave2
+LABEL_FROM_PMT=N/A
+LOGNAME=root
+MAIL=/var/mail/root
+NODE_LABELS=cicd-slave docker-compile go jenkins-cicd-slave2-10.13.0.159 slave slave2
+NODE_NAME=jenkins-cicd-slave2-10.13.0.159
+OLDPWD=/root
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+PWD=/data/jenkins/workspace/am3/prod/gate
+RUN_ARTIFACTS_DISPLAY_URL=http://pmt.centurygame.io/job/am3/job/prod/job/gate/1/display/redirect?page=artifacts
+RUN_CHANGES_DISPLAY_URL=http://pmt.centurygame.io/job/am3/job/prod/job/gate/1/display/redirect?page=changes
+RUN_DISPLAY_URL=http://pmt.centurygame.io/job/am3/job/prod/job/gate/1/display/redirect
+RUN_TESTS_DISPLAY_URL=http://pmt.centurygame.io/job/am3/job/prod/job/gate/1/display/redirect?page=tests
+SHELL=/bin/bash
+SHLVL=3
+SSH_CLIENT=10.13.0.222 49462 22
+SSH_CONNECTION=10.13.0.222 49462 10.13.0.159 22
+STAGE_NAME=Declarative: Post Actions
+TERM=xterm
+USER=root
+WORKSPACE=/data/jenkins/workspace/am3/prod/gate
+WORKSPACE_TMP=/data/jenkins/workspace/am3/prod/gate@tmp
+XDG_RUNTIME_DIR=/run/user/0
+XDG_SESSION_ID=51
+_=/usr/bin/env
+addons=false
+aws_credentials_id=aws-am3-eadqwjye
+building_cache_skipped=false
+cluster: eks-am3-us-west-2
+cluster_local_dev_vip=10.192.15.200
+cluster_name=eks-am3-us-west-2
+cluster_region=us-west-2
+cluster_vendor=aws
+config_version=2.5.0
+context=.
+context_name=arn:aws:eks:us-west-2:956231806574:cluster/am3-k8s
+current_revision=9605b2c
+deployment_branch=2.5.0
+dnspod_login_token=****
+dockerfile=k8s/gate/Dockerfile
+encryption_cipher=****
+env_name=prod
+go_mod_ssh_key=****
+go_mod_ssh_key_USR=funops
+harbor_auth=harbor-auth
+hosted_zone_id=Z05235381S505YLXTYK5A
+hpa_status=false
+http_exposed=true
+image_cd=956231806574.dkr.ecr.us-west-2.amazonaws.com/gate:feature-1.0-am3-ch37g4jilofeu6a2supg
+image_ci=956231806574.dkr.ecr.us-west-2.amazonaws.com/gate:feature-1.0-am3-ch37g4jilofeu6a2supg
+image_name=gate
+kubeconfig_credentials_id=kubeconfig-aws-am3-eadqwjye
+manifests_backup=am3.prod.online.gate.ch37g4jilofeu6a2supg.tar.gz
+namespace=am3-prod-online
+operation=deploy
+path_to_charts=_cicd_/charts
+path_to_cicd=_cicd_
+path_to_clusters=/data/jenkins/workspace/am3/prod/gate/_cicd_/deployment/config/clusters.yaml
+path_to_deployment=_cicd_/deployment
+path_to_profile=/data/jenkins/workspace/am3/prod/gate/profile.yaml
+path_to_project=_cicd_/project
+path_to_result=_cicd_/result
+pmt_username=jianwei.ma
+probe_enabled=false
+project=am3
+registry_type=ecr
+registry_url_cd_pull=956231806574.dkr.ecr.us-west-2.amazonaws.com
+registry_url_ci_push=956231806574.dkr.ecr.us-west-2.amazonaws.com
+replicas=1
+repo_name=gate
+reuse_image_disabled=false
+runner=slave2
+scm_checkout_key=****
+scm_checkout_key_USR=funops
+scm_credentials_id_bitbucket=funops
+scm_credentials_id_gitlab=robot.devops
+scm_credentials_id_service_repo=funops
+service_branch=feature/1.0-am3
+service_name=gate
+service_repo=git@bitbucket.org:funplus/gate.git
+service_type=sandwich
+slaveId=2
+stage: online
+stage=online
+subnetId=null
+tcp_exposed=false
+tcp_internal_elb_required=false
+timeout_adjust=0
+udp_exposed=false
+udp_internal_elb_required=false
+values=ZGVwbG95bWVudDoKICBjb25maWdtYXA6CiAgICBkYXRhOiBbXQogICAgc2NvcGU6CiAgICAtIG9ubGluZQogIGVudnM6CiAgLSBuYW1lOiBzeXNfY2RfcHJvamVjdAogICAgdmFsdWU6IGFtMwogIC0gbmFtZTogc3lzX2NkX3N0YWdlCiAgICB2YWx1ZTogb25saW5lCiAgLSBuYW1lOiBzeXNfY2Rfc2VydmljZQogICAgdmFsdWU6IGdhdGUKICAtIG5hbWU6IHN5c19jZF9ncmFjZWZ1bAogICAgdmFsdWU6ICIwIgogIC0gbmFtZTogc3lzX3N0YWdlCiAgICB2YWx1ZTogb25saW5lCiAgLSBuYW1lOiBzeXNfY29uZl9wYXRoX3NlcnZpY2UKICAgIHZhbHVlOiAvZXRjL2NvbmYvc2VydmljZQogIC0gbmFtZTogc3lzX2NvbmZfcGF0aF9lbnYKICAgIHZhbHVlOiAvZXRjL2NvbmYvZW52CiAgLSBuYW1lOiBzeXNfZW52X25hbWUKICAgIHZhbHVlOiBwcm9kCiAgLSBuYW1lOiBzeXN0ZW1faHBhX2NwdQogICAgdmFsdWU6ICI3MCIKICAtIG5hbWU6IHN5c3RlbV9ocGFfbWVtCiAgICB2YWx1ZTogIjcwIgogIC0gbmFtZTogc3lzX2NkX2VudgogICAgdmFsdWU6IHByb2QKICAtIG5hbWU6IHN5c3RlbV9kZXBsb3ltZW50X3RhZwogICAgdmFsdWU6ICIiCiAgLSBuYW1lOiBzeXNfY2RfeGlkCiAgICB2YWx1ZTogY2gzN2c0amlsb2ZldTZhMnN1cGcKICBsaWZlY3ljbGU6CiAgICBwb3N0U3RhcnQ6CiAgICAgIGVuYWJsZWQ6IGZhbHNlCiAgICBwcmVTdG9wOgogICAgICBlbmFibGVkOiB0cnVlCiAgbGl2ZW5lc3NQcm9iZToKICAgIGVuYWJsZWQ6IGZhbHNlCiAgbWF4R3JhY2VmdWxUZXJtaW5hdGlvblNlYzogMzYwMAogIHBvcnRzOgogIC0gY29udGFpbmVyUG9ydDogODk5MAogICAgZXhwb3NlZDogdHJ1ZQogICAgaG9zdDogYW0zLXByb2QtZ2F0ZS1vbmxpbmUuYXV0by5jZW50dXJ5Z2FtZS5pbwogICAgaG9zdFBhdGg6ICIiCiAgICBuYW1lOiAiODk5MCIKICAgIHByb3RvY29sOiBIVFRQCiAgcmVhZGluZXNzUHJvYmU6CiAgICBlbmFibGVkOiBmYWxzZQogIHJlcGxpY2FzOiAxCiAgcmVzb3VyY2VzOgogICAgbGltaXRzOgogICAgICBjcHU6IDEwMDBtCiAgICAgIG1lbW9yeTogMTEwME0KICAgIHJlcXVlc3RzOgogICAgICBjcHU6IDEwMDBtCiAgICAgIG1lbW9yeTogMTEwME0KZXZpY3Q6CiAgZGlzYWJsZWQ6IGZhbHNlCmhwYToKICBlbmFibGVkOiBmYWxzZQogIG1heFJlcGxpY2FzOiAyMAogIG1ldHJpY3M6IHwKICAgIC0gcmVzb3VyY2U6CiAgICAgICAgbmFtZTogY3B1CiAgICAgICAgdGFyZ2V0OgogICAgICAgICAgYXZlcmFnZVV0aWxpemF0aW9uOiA3MAogICAgICAgICAgdHlwZTogVXRpbGl6YXRpb24KICAgICAgdHlwZTogUmVzb3VyY2UKICAgIC0gcmVzb3VyY2U6CiAgICAgICAgbmFtZTogbWVtb3J5CiAgICAgICAgdGFyZ2V0OgogICAgICAgICAgYXZlcmFnZVV0aWxpemF0aW9uOiA3MAogICAgICAgICAgdHlwZTogVXRpbGl6YXRpb24KICAgICAgdHlwZTogUmVzb3VyY2UKICBtaW5SZXBsaWNhczogMQo=
+x_service_branch=feature-1.0-am3
+xid=ch37g4jilofeu6a2supg
+xid_data=/data/jenkins/workspace/am3/prod/gate/am3.prod.online.gate.ch37g4jilofeu6a2supg
++ cli report --ding-token --ding-sec --path-to-report /data/jenkins/workspace/am3/prod/gate/_cicd_/deployment/config/report.yaml --path-to-profile /data/jenkins/workspace/am3/prod/gate/profile.yaml --result failure
+未提供 dingToken 或 dingSec
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
 `

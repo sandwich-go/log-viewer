@@ -41,17 +41,40 @@ function findUrlsWithFlag(text) {
   return matches
 }
 
-function logParser(log, lineStyleFunc, eventMapping = {}) {
+function logParser(log, lineStyleFunc, eventMapping, isSessionStartFunc) {
   eventMapping = eventMapping || {}
   const stringLines = split2Lines(log)
   const stringLinesText = []
+  let lastLineIsSessionStart = false
   stringLines.forEach(line => {
     if (!line) {
       return
     }
+    const ret = isSessionStartFunc({line: line})
+    const thisLineIsSessionStart = !!ret
+    let sessionTitle = line
+    if (typeof ret === 'string') {
+      sessionTitle = ret
+    }
+    lastLineIsSessionStart = thisLineIsSessionStart
+
     const oneLinePart = ansiParse(preLine(line, eventMapping))
-    const lineStyle = lineStyleFunc ? lineStyleFunc({line: line}) : {}
-    let oneLinePartNew = {items: [], lineStyle: lineStyle}
+    const lineStyle = lineStyleFunc
+      ? lineStyleFunc({line: line, isSessionStart: thisLineIsSessionStart})
+      : {}
+    // folder部分
+    if (thisLineIsSessionStart) {
+      lineStyle['font-size'] = '16px'
+      lineStyle['font-weight'] = 'bold'
+      lineStyle['background'] = 'white'
+      lineStyle['color'] = 'black'
+    }
+    let oneLinePartNew = {
+      items: [],
+      lineStyle: lineStyle,
+      isSessionStart: thisLineIsSessionStart,
+      session: sessionTitle
+    }
     oneLinePart.forEach(item => {
       findUrlsWithFlag(item.text).forEach(v => {
         let subItem = {
