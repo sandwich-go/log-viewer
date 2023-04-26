@@ -53,21 +53,27 @@ function logParser(log, lineStyleFunc, eventMapping, isSessionStartFunc) {
     const ret = isSessionStartFunc({line: line})
     const thisLineIsSessionStart = !!ret
     let sessionTitle = line
+    let sessionStyle = {
+      'font-weight': 'bold',
+      background: 'white',
+      color: 'black'
+    }
     if (typeof ret === 'string') {
       sessionTitle = ret
+    }
+    if (typeof ret === 'object') {
+      sessionTitle = ret.line || line
+      sessionStyle = ret.style || sessionStyle
     }
     lastLineIsSessionStart = thisLineIsSessionStart
 
     const oneLinePart = ansiParse(preLine(line, eventMapping))
-    const lineStyle = lineStyleFunc
+    let lineStyle = lineStyleFunc
       ? lineStyleFunc({line: line, isSessionStart: thisLineIsSessionStart})
       : {}
     // folder部分
     if (thisLineIsSessionStart) {
-      lineStyle['font-size'] = '16px'
-      lineStyle['font-weight'] = 'bold'
-      lineStyle['background'] = 'white'
-      lineStyle['color'] = 'black'
+      lineStyle = Object.assign(lineStyle, sessionStyle)
     }
     let oneLinePartNew = {
       items: [],
