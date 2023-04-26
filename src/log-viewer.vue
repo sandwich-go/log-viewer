@@ -3,7 +3,7 @@
     <select
       v-if="!sessionSlot && logSessions.length"
       v-model="currentSession"
-      style="width: 100%; font-size: 13px; border-radius: 0;"
+      style="width: 100%; font-size: 13px; border-radius: 0; padding-bottom: 3px;"
       v-on:change="toSession(currentSession)"
     >
       <option value="0" disabled>select session</option>
@@ -19,6 +19,7 @@
       :name="sessionSlot"
       :options="logSessions"
       :onChange="toSession"
+      style="padding-bottom: 3px;"
     ></slot>
     <virtual-list
       class="log-viewer"
@@ -208,9 +209,6 @@ export default {
      */
     forceRender() {
       this.$refs.virtualList.forceRender()
-    },
-    setCurrentSession(v) {
-      this.currentSession = v
     },
     toSession(to) {
       this.currentSession = to
