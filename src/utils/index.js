@@ -78,6 +78,7 @@ function logParser(log, lineStyleFunc, eventMapping, isSessionStartFunc) {
     let oneLinePartNew = {
       items: [],
       lineStyle: lineStyle,
+      isHighlight: lineStyle.isHighlight,
       isSessionStart: thisLineIsSessionStart,
       session: sessionTitle
     }

@@ -21,6 +21,7 @@ export function highlightLine({line}) {
   ) {
     style.background = '#800000'
     style['font-weight'] = 'bold'
+    style['isHighlight'] = true
   }
   return style
 }

@@ -3,7 +3,7 @@
     <select
       v-if="!sessionSlot && logSessions.length"
       v-model="currentSession"
-      style="width: 100%; font-size: 13px; border-radius: 0; padding-bottom: 3px;"
+      style="width: 50%; font-size: 13px; border-radius: 0; padding-bottom: 3px;"
       v-on:change="toSession(currentSession)"
     >
       <option value="0" disabled>select session</option>
@@ -135,7 +135,9 @@ export default {
       animate: null,
       LineWrapper,
       currentSession: 0,
-      logSessions: []
+      currentHighlight: 0,
+      logSessions: [],
+      logHighlight: []
     }
   },
   computed: {
@@ -156,10 +158,24 @@ export default {
         this.isSessionStart
       )
       this.logSessions = []
+      this.logHighlight = []
       // 合并连续的session start
       let currentSession = ''
       let currentSessionIndex = 0
       lineParsed.forEach((item, index) => {
+        if (item.isHighlight) {
+          this.logSessions.push({
+            label: `@${`${index}`.padStart(
+              String(lineParsed.length).length,
+              '0'
+            )} ${item.session}`,
+            value: index,
+            isHighlight: true,
+            lineStyle: item.lineStyle
+          })
+          currentSession = ''
+          return
+        }
         if (item.isSessionStart) {
           if (currentSession === '') {
             currentSessionIndex = index + 1
@@ -173,7 +189,8 @@ export default {
                 String(lineParsed.length).length,
                 '0'
               )} ${currentSession}`,
-              value: currentSessionIndex
+              value: currentSessionIndex,
+              isSession: true
             })
             currentSession = ''
           }
