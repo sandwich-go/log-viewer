@@ -37,12 +37,21 @@
           class="btn tooltip-toggle"
           v-on:click="softWrap = !softWrap"
           :style="{
-            color: softWrap ? 'green' : '',
+            background: softWrap ? '#b3e6c8' : '',
             'font-size': '110%',
             width: '30px'
           }"
         >
-          <span>&#8629;</span>
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 4h11a4 4 0 010 8H9.414l.293.293a1 1 0 11-1.414 1.414L5.586 11l2.707-2.707a1 1 0 011.414 1.414L9.414 10H12a2 2 0 100-4H1a1 1 0 010-2z"
+              fill="#000000"
+            />
+            <path
+              d="M0 11a1 1 0 011-1h3a1 1 0 110 2H1a1 1 0 01-1-1z"
+              fill="#000000"
+            />
+          </svg>
         </button>
         <button
           v-if="item === 'autoScroll'"
@@ -50,12 +59,24 @@
           class="btn"
           v-on:click="autoScroll = !autoScroll"
           :style="{
-            color: autoScroll ? 'green' : '',
+            background: autoScroll ? '#b3e6c8' : '',
             'font-size': '110%',
             width: '30px'
           }"
         >
-          <span>&#8634;</span>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 12C21 16.9706 16.9706 21 12 21C9.69494 21 7.59227 20.1334 6 18.7083L3 16M3 12C3 7.02944 7.02944 3 12 3C14.3051 3 16.4077 3.86656 18 5.29168L21 8M3 21V16M3 16H8M21 3V8M21 8H16"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <button
           v-if="item === 'collapse'"
@@ -69,7 +90,42 @@
             width: '30px'
           }"
         >
-          <span>&#8645;</span>
+          <svg
+            v-if="allCollapse"
+            class="svg-icon-bigger"
+            viewBox="0 0 24 24"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-labelledby="chevronsRightIconTitle"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+            color="#000000"
+          >
+            <title id="chevronsRightIconTitle">Chevrons Right</title>
+            <polyline points="13 7 18 12 13 17 13 17" />
+            <polyline points="7 7 12 12 7 17 7 17" />
+          </svg>
+          <svg
+            v-else
+            class="svg-icon-bigger"
+            viewBox="0 0 24 24"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-labelledby="chevronsDownIconTitle"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+            color="#000000"
+          >
+            <title id="chevronsDownIconTitle">Chevrons Down</title>
+            <polyline points="7 13 12 18 17 13" />
+            <polyline points="7 7 12 12 17 7" />
+          </svg>
         </button>
         <button
           v-if="item === 'toStart'"
@@ -78,7 +134,20 @@
           v-on:click="toStart"
           :style="{'font-size': '110%', width: '30px'}"
         >
-          <span>&#8657;</span>
+          <svg
+            class="svg-icon-bigger"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 12L12 8M12 8L16 12M12 8V20M4 4H20"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <button
           v-if="item === 'toEnd'"
@@ -88,7 +157,16 @@
           v-on:click="toEnd"
           :style="{'font-size': '110%', width: '30px'}"
         >
-          <span>&#8659;</span>
+          <svg
+            class="svg-icon-bigger"
+            fill="#000000"
+            viewBox="0 0 56 56"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 12.1797 44.4648 C 10.9610 44.4648 10.1406 45.3320 10.1406 46.5508 C 10.1406 47.7695 10.9610 48.6602 12.1797 48.6602 L 43.7734 48.6602 C 45.0156 48.6602 45.8594 47.7695 45.8594 46.5508 C 45.8594 45.3320 45.0156 44.4648 43.7734 44.4648 L 28.4922 44.4648 C 28.8906 44.3477 29.2422 44.1367 29.5703 43.7852 L 45.0859 28.2695 C 45.5547 27.7773 45.7656 27.2617 45.7656 26.6992 C 45.7656 25.5273 44.9219 24.6367 43.7266 24.6367 C 43.1641 24.6367 42.6250 24.8476 42.2266 25.2227 L 36.9766 30.4024 L 29.9219 38.1133 L 30.1094 33.0976 L 30.1094 9.4258 C 30.1094 8.2071 29.2188 7.3398 28 7.3398 C 26.7812 7.3398 25.9141 8.2071 25.9141 9.4258 L 25.9141 33.0976 L 26.0781 38.1367 L 19.0234 30.4024 L 13.7734 25.2227 C 13.3984 24.8476 12.8359 24.6367 12.2734 24.6367 C 11.1016 24.6367 10.2344 25.5273 10.2344 26.6992 C 10.2344 27.2617 10.4688 27.7773 10.9375 28.2695 L 26.4297 43.7852 C 26.7578 44.1367 27.1328 44.3477 27.5312 44.4648 Z"
+            />
+          </svg>
         </button>
         <button
           v-if="item === 'copy'"
@@ -97,7 +175,29 @@
           v-on:click="copy"
           :style="{'font-size': '110%', width: '30px'}"
         >
-          <span>&#x2398;</span>
+          <svg
+            fill="#000000"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+          >
+            <g>
+              <g>
+                <path
+                  d="M479.168,113.227c-0.537-1.284-1.319-2.451-2.304-3.435L370.197,3.125c-2.002-1.991-4.707-3.114-7.531-3.125h-192
+			C164.776,0,160,4.776,160,10.667V64H42.667C36.776,64,32,68.776,32,74.667v426.667C32,507.224,36.776,512,42.667,512h298.667
+			c5.891,0,10.667-4.776,10.667-10.667V448h117.333c5.891,0,10.667-4.776,10.667-10.667v-320
+			C479.997,115.923,479.714,114.527,479.168,113.227z M373.333,36.416l70.251,70.251h-70.251V36.416z M330.667,490.667H53.333
+			V85.333H224v96c0,5.891,4.776,10.667,10.667,10.667h96V490.667z M245.333,170.667v-70.251l70.251,70.251H245.333z
+			 M458.667,426.667H352V181.333c-0.009-2.827-1.132-5.537-3.125-7.541L242.208,67.125c-2.005-1.994-4.714-3.117-7.541-3.125
+			h-53.333V21.333H352v96c0,5.891,4.776,10.667,10.667,10.667h96V426.667z"
+                />
+              </g>
+            </g>
+          </svg>
         </button>
       </template>
     </div>
@@ -472,5 +572,9 @@ select {
   height: 28px;
   -webkit-appearance: menulist-button;
   -moz-appearance: none;
+}
+
+.svg-icon-bigger {
+  transform: scale(1.4);
 }
 </style>
