@@ -5,7 +5,8 @@
       :is-session-start="isSessionStart"
       :number="numberData['number']"
       :style="customStyle"
-      :set-collapse="setCollapse"
+      :switch-collapse="switchCollapse"
+      :in-collapse="inCollapse"
     ></line-session>
     <line-number
       v-if="hasNumber"
@@ -64,8 +65,8 @@ export default {
     hasNumber: Boolean,
     numberData: Object,
     isSessionStart: Boolean,
-    setCollapse: Function,
-    lineInCollapse: Function
+    switchCollapse: Function,
+    inCollapse: Function
   },
   data() {
     return {

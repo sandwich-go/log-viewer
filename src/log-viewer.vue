@@ -18,16 +18,16 @@
             :key="option.value"
             class="session-highlight"
             :value="option.value"
-            >{{ option.label }}</option
-          >
+            >{{ option.label }}
+          </option>
         </select>
         <slot
           :name="sessionSlot"
           :options="logSessions"
           :onChange="toSession"
-          style="padding-bottom: 3px;"
         ></slot>
       </template>
+      <slot name="status"></slot>
       <template v-for="item in innerControl">
         <button
           v-if="item === 'softWrap'"
@@ -54,12 +54,24 @@
           <span>&#8634;</span>
         </button>
         <button
+          v-if="item === 'collapse'"
+          class="btn"
+          v-on:click="allSwitchCollapse"
+          :style="{
+            color: allCollapse ? 'green' : '',
+            'font-size': '110%',
+            width: '30px'
+          }"
+        >
+          <span>&#8645;</span>
+        </button>
+        <button
           v-if="item === 'toStart'"
           class="btn"
           v-on:click="toStart"
           :style="{'font-size': '110%', width: '30px'}"
         >
-          <span>&#8593;</span>
+          <span>&#8657;</span>
         </button>
         <button
           v-if="item === 'toEnd'"
@@ -67,7 +79,7 @@
           v-on:click="toEnd"
           :style="{'font-size': '110%', width: '30px'}"
         >
-          <span>&#8595;</span>
+          <span>&#8659;</span>
         </button>
         <button
           v-if="item === 'copy'"
@@ -105,6 +117,7 @@ import LineWrapper from './components/line-wrapper.vue'
 import LogLoading from './components/loading.vue'
 import parse from './utils'
 import {highlightLine} from './utils/highlight'
+
 const jsb = require('@sandwich-go/jsb')
 
 export default {
@@ -191,7 +204,14 @@ export default {
     innerControl: {
       type: Array,
       default() {
-        return ['softWrap', 'autoScroll', 'toStart', 'toEnd', 'copy']
+        return [
+          'softWrap',
+          'autoScroll',
+          'collapse',
+          'toStart',
+          'toEnd',
+          'copy'
+        ]
       }
     }
   },
@@ -207,13 +227,11 @@ export default {
       logHighlight: [],
       inCollapse: {},
       linesShowing: [],
-      clickCollapse: false
+      clickCollapse: false,
+      allCollapse: false
     }
   },
   computed: {
-    inCollapseLineSorted() {
-      return Object.keys(this.inCollapse).map(key => Number(key))
-    },
     remain() {
       if (typeof +this.height === 'number') {
         return this.height > 0 ? Math.floor(this.height / this.rowHeight) : 30
@@ -274,6 +292,9 @@ export default {
       return lineParsed
     },
     linesCount() {
+      if (this.linesShowing.length === 0) {
+        this.freshLineShowing(this.lines)
+      }
       return this.linesShowing.length + (this.loading ? 1 : 0)
     },
     logViewerStyle() {
@@ -309,6 +330,14 @@ export default {
       this.currentSession = to
       this.setScrollTop(this.currentSession - 1)
     },
+    switchCollapse(sessionLineNumber) {
+      this.clickCollapse = true
+      this.inCollapse[sessionLineNumber] = !this.inCollapse[sessionLineNumber]
+      this.freshLineShowing(this.lines)
+    },
+    sessionInCollapse(sessionLineNumber) {
+      return this.inCollapse[sessionLineNumber]
+    },
     getLineWrapperProps(index) {
       let height = this.rowHeight
       const data = this.linesShowing[index]
@@ -318,17 +347,14 @@ export default {
         softWrap: this.softWrap,
         numberFollowLineStyle: this.numberFollowLineStyle,
         background: this.background,
-        isSessionStart: data.isSessionStart,
+        isSessionStart: data ? data.isSessionStart : false,
         numberData: {
-          number: data.lineNumber
+          number: data ? data.lineNumber : index + 1
         }
       }
       const _this = this
-      props.setCollapse = (number, inCollapse) => {
-        _this.clickCollapse = true
-        _this.inCollapse[number] = inCollapse
-        _this.freshLineShowing(this.lines)
-      }
+      props.switchCollapse = this.switchCollapse
+      props.inCollapse = this.sessionInCollapse
       props.data = data
       this.lineWrapperStyle &&
         (props.comStyle = this.lineWrapperStyle(index + 1))
@@ -395,6 +421,19 @@ export default {
     },
     toStart() {
       this.setScrollTop(0)
+    },
+    allSwitchCollapse() {
+      this.allCollapse = !this.allCollapse
+      let changed = false
+      jsb.each(this.inCollapse, (v, k) => {
+        if (v !== this.allCollapse) {
+          this.inCollapse[k] = this.allCollapse
+          changed = true
+        }
+      })
+      if (changed) {
+        this.freshLineShowing()
+      }
     },
     toEnd() {
       this.setScrollTop(this.linesCount)
