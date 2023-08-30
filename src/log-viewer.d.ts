@@ -44,11 +44,9 @@ declare module '@sandwich-go/log-viewer' {
     virtualAttrs: object
     rowHeight: number
     height: number
-    softWrap:boolean
     fontSize:number
     log: string
     loading: boolean
-    autoScroll: boolean
     hasNumber: boolean
     scrollDuration: number
     lineStyle: (args: {line: string,isSessionStart:boolean}) => object
