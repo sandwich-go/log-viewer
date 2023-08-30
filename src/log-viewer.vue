@@ -142,10 +142,6 @@ export default {
     VirtualList
   },
   props: {
-    softWrap: {
-      type: Boolean,
-      default: true
-    },
     customStyle: {
       type: Object,
       default() {}
@@ -195,13 +191,6 @@ export default {
      */
     loading: Boolean,
     /**
-     * Auto scroll to the bottom when the logs update. Defaults to be true
-     */
-    autoScroll: {
-      type: Boolean,
-      default: true
-    },
-    /**
      * Has number line if hasNumber is true. Defaults to be true.
      */
     hasNumber: {
@@ -232,6 +221,8 @@ export default {
   },
   data() {
     return {
+      softWrap: true,
+      autoScroll: true,
       start: 0,
       scrollStart: 0,
       animate: null,
