@@ -1,26 +1,85 @@
 <template>
   <div>
-    <select
-      v-if="!sessionSlot && logSessions.length"
-      v-model="currentSession"
-      style="width: 50%; font-size: 13px; border-radius: 0; padding-bottom: 3px;"
-      v-on:change="toSession(currentSession)"
+    <div
+      v-if="logSessions.length || innerControl.length"
+      class="div-flex-end"
+      style="gap: 10px; padding-bottom: 3px;"
     >
-      <option value="0" disabled>select session</option>
-      <option
-        v-for="option in logSessions"
-        :key="option.value"
-        class="session-highlight"
-        :value="option.value"
-        >{{ option.label }}</option
-      >
-    </select>
-    <slot
-      :name="sessionSlot"
-      :options="logSessions"
-      :onChange="toSession"
-      style="padding-bottom: 3px;"
-    ></slot>
+      <template v-if="logSessions.length">
+        <select
+          v-if="!sessionSlot"
+          v-model="currentSession"
+          style="width: 50%; font-size: 13px; border-radius: 0; padding-bottom: 3px;"
+          v-on:change="toSession(currentSession)"
+        >
+          <option value="0" disabled>select session</option>
+          <option
+            v-for="option in logSessions"
+            :key="option.value"
+            class="session-highlight"
+            :value="option.value"
+            >{{ option.label }}</option
+          >
+        </select>
+        <slot
+          :name="sessionSlot"
+          :options="logSessions"
+          :onChange="toSession"
+          style="padding-bottom: 3px;"
+        ></slot>
+      </template>
+      <template v-for="item in innerControl">
+        <button
+          v-if="item === 'softWrap'"
+          class="btn"
+          v-on:click="softWrap = !softWrap"
+          :style="{
+            color: softWrap ? 'green' : '',
+            'font-size': '110%',
+            width: '30px'
+          }"
+        >
+          <span>&#8629;</span>
+        </button>
+        <button
+          v-if="item === 'autoScroll'"
+          class="btn"
+          v-on:click="autoScroll = !autoScroll"
+          :style="{
+            color: autoScroll ? 'green' : '',
+            'font-size': '110%',
+            width: '30px'
+          }"
+        >
+          <span>&#8634;</span>
+        </button>
+        <button
+          v-if="item === 'toStart'"
+          class="btn"
+          v-on:click="toStart"
+          :style="{'font-size': '110%', width: '30px'}"
+        >
+          <span>&#8593;</span>
+        </button>
+        <button
+          v-if="item === 'toEnd'"
+          class="btn"
+          v-on:click="toEnd"
+          :style="{'font-size': '110%', width: '30px'}"
+        >
+          <span>&#8595;</span>
+        </button>
+        <button
+          v-if="item === 'copy'"
+          class="btn"
+          v-on:click="copy"
+          :style="{'font-size': '110%', width: '30px'}"
+        >
+          <span>&#x2398;</span>
+        </button>
+      </template>
+    </div>
+
     <virtual-list
       class="log-viewer"
       v-bind:style="logViewerStyle"
@@ -46,6 +105,7 @@ import LineWrapper from './components/line-wrapper.vue'
 import LogLoading from './components/loading.vue'
 import parse from './utils'
 import {highlightLine} from './utils/highlight'
+const jsb = require('@sandwich-go/jsb')
 
 export default {
   name: 'LogViewer',
@@ -127,7 +187,13 @@ export default {
       type: Number,
       default: 0
     },
-    sessionSlot: String
+    sessionSlot: String,
+    innerControl: {
+      type: Array,
+      default() {
+        return ['softWrap', 'autoScroll', 'toStart', 'toEnd', 'copy']
+      }
+    }
   },
   data() {
     return {
@@ -327,6 +393,15 @@ export default {
       }
       animation()
     },
+    toStart() {
+      this.setScrollTop(0)
+    },
+    toEnd() {
+      this.setScrollTop(this.linesCount)
+    },
+    copy(event) {
+      jsb.clipCopy(this.log, event)
+    },
     onscroll(event, data) {
       this.scrollStart = Math.ceil(data.offset / this.rowHeight)
     }
@@ -344,5 +419,14 @@ export default {
 .session-highlight {
   background-color: red;
   z-index: 10000;
+}
+
+.div-flex-end {
+  display: flex;
+  align-items: center;
+  color: gray;
+  justify-content: flex-end;
+  overflow: hidden;
+  z-index: 10;
 }
 </style>

@@ -125,7 +125,7 @@ export default {
   .line-session {
     width: 20px;
     text-align: right;
-    color: #666;
+    color: white;
     padding-right: 3px;
     -webkit-user-select: none;
     -moz-user-select: none;

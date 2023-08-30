@@ -1,12 +1,8 @@
 <template>
   <div class="line-session">
-    <span v-if="isSessionStart">
-      <span v-if="isLineCollapse" @click="switchCollapseStatus"
-        ><i class="el-icon-arrow-right"
-      /></span>
-      <span v-else @click="switchCollapseStatus"
-        ><i class="el-icon-arrow-down"
-      /></span>
+    <span v-if="isSessionStart" style="font-size: 110%;">
+      <span v-if="isLineCollapse">&#8680;</span>
+      <span v-else>&#8681;</span>
     </span>
   </div>
 </template>
@@ -16,7 +12,8 @@ export default {
   props: {
     isSessionStart: Boolean,
     setCollapse: Function,
-    number: Number
+    number: Number,
+    parentSwitchCollapseStatus: Function
   },
   data() {
     return {
