@@ -84,7 +84,7 @@
         <button
           v-if="item === 'collapse'"
           title="折叠/展开所有日志段落"
-          :disabled="!logSessions.length"
+          :disabled="inCollapse.length === 0"
           class="btn"
           v-on:click="allSwitchCollapse"
           :style="{
