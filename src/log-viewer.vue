@@ -37,19 +37,22 @@
           class="btn tooltip-toggle"
           v-on:click="softWrap = !softWrap"
           :style="{
-            background: softWrap ? '#b3e6c8' : '',
             'font-size': '110%',
             width: '30px'
           }"
         >
-          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            class="svg-icon-bigger"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M1 4h11a4 4 0 010 8H9.414l.293.293a1 1 0 11-1.414 1.414L5.586 11l2.707-2.707a1 1 0 011.414 1.414L9.414 10H12a2 2 0 100-4H1a1 1 0 010-2z"
-              fill="#000000"
+              :fill="softWrap ? 'darkgreen' : '#000000'"
             />
             <path
               d="M0 11a1 1 0 011-1h3a1 1 0 110 2H1a1 1 0 01-1-1z"
-              fill="#000000"
+              :fill="softWrap ? 'green' : '#000000'"
             />
           </svg>
         </button>
@@ -59,19 +62,19 @@
           class="btn"
           v-on:click="autoScroll = !autoScroll"
           :style="{
-            background: autoScroll ? '#b3e6c8' : '',
             'font-size': '110%',
             width: '30px'
           }"
         >
           <svg
+            class="svg-icon-bigger"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               d="M21 12C21 16.9706 16.9706 21 12 21C9.69494 21 7.59227 20.1334 6 18.7083L3 16M3 12C3 7.02944 7.02944 3 12 3C14.3051 3 16.4077 3.86656 18 5.29168L21 8M3 21V16M3 16H8M21 3V8M21 8H16"
-              stroke="#000000"
+              :stroke="autoScroll ? 'green' : '#000000'"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -85,7 +88,6 @@
           class="btn"
           v-on:click="allSwitchCollapse"
           :style="{
-            color: allCollapse ? 'green' : '',
             'font-size': '110%',
             width: '30px'
           }"
