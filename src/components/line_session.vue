@@ -19,6 +19,8 @@ export default {
   methods: {
     switchCollapseStatus() {
       this.switchCollapse(this.number)
+      // 强刷一次，链路太长更新不及时
+      this.$forceUpdate()
     }
   }
 }

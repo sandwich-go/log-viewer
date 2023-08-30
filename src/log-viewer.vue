@@ -8,8 +8,9 @@
       <template v-if="logSessions.length">
         <select
           v-if="!sessionSlot"
+          size="10"
           v-model="currentSession"
-          style="width: 50%; font-size: 13px; border-radius: 0; padding-bottom: 3px;"
+          style="width: 50%; font-size: 13px; border-radius: 0; height: 100px;"
           v-on:change="toSession(currentSession)"
         >
           <option value="0" disabled>select session</option>
@@ -55,6 +56,7 @@
         </button>
         <button
           v-if="item === 'collapse'"
+          :disabled="!logSessions.length"
           class="btn"
           v-on:click="allSwitchCollapse"
           :style="{
@@ -352,7 +354,6 @@ export default {
           number: data ? data.lineNumber : index + 1
         }
       }
-      const _this = this
       props.switchCollapse = this.switchCollapse
       props.inCollapse = this.sessionInCollapse
       props.data = data
@@ -467,5 +468,11 @@ export default {
   justify-content: flex-end;
   overflow: hidden;
   z-index: 10;
+}
+
+select {
+  height: 28px;
+  -webkit-appearance: menulist-button;
+  -moz-appearance: none;
 }
 </style>
