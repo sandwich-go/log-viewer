@@ -42,7 +42,7 @@
           }"
         >
           <svg
-            class="svg-icon-bigger"
+            class="svg-icon-bigger-13"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -67,7 +67,7 @@
           }"
         >
           <svg
-            class="svg-icon-bigger"
+            class="svg-icon-bigger-13"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -578,5 +578,9 @@ select {
 
 .svg-icon-bigger {
   transform: scale(1.4);
+}
+
+.svg-icon-bigger-13 {
+  transform: scale(1.2);
 }
 </style>
