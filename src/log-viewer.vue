@@ -34,7 +34,7 @@
           v-if="item === 'softWrap'"
           data-shift="west"
           title="自动换行"
-          class="btn"
+          class="btn tooltip-toggle"
           v-on:click="softWrap = !softWrap"
           :style="{
             color: softWrap ? 'green' : '',
@@ -46,7 +46,6 @@
         </button>
         <button
           v-if="item === 'autoScroll'"
-          data-shift="west"
           title="自动更新日志并滚动至底部"
           class="btn"
           v-on:click="autoScroll = !autoScroll"
@@ -60,7 +59,6 @@
         </button>
         <button
           v-if="item === 'collapse'"
-          data-shift="west"
           title="折叠/展开所有日志段落"
           :disabled="!logSessions.length"
           class="btn"
@@ -75,7 +73,6 @@
         </button>
         <button
           v-if="item === 'toStart'"
-          data-shift="west"
           title="到日志第一行"
           class="btn"
           v-on:click="toStart"
@@ -96,7 +93,6 @@
         <button
           v-if="item === 'copy'"
           class="btn"
-          data-shift="west"
           title="拷贝"
           v-on:click="copy"
           :style="{'font-size': '110%', width: '30px'}"
@@ -131,8 +127,6 @@ import LineWrapper from './components/line-wrapper.vue'
 import LogLoading from './components/loading.vue'
 import parse from './utils'
 import {highlightLine} from './utils/highlight'
-import './utils/simpleTooltip.js'
-import './utils/simpleTooltip.css'
 const jsb = require('@sandwich-go/jsb')
 
 export default {
@@ -437,7 +431,7 @@ export default {
         }
       })
       if (changed) {
-        this.freshLineShowing()
+        this.freshLineShowing(this.lines)
       }
     },
     toEnd() {
@@ -478,44 +472,5 @@ select {
   height: 28px;
   -webkit-appearance: menulist-button;
   -moz-appearance: none;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
 }
 </style>
