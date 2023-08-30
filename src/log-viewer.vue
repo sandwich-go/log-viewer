@@ -50,6 +50,7 @@ import {highlightLine} from './utils/highlight'
 export default {
   name: 'LogViewer',
   components: {
+    LineWrapper,
     VirtualList
   },
   props: {
@@ -137,10 +138,16 @@ export default {
       currentSession: 0,
       currentHighlight: 0,
       logSessions: [],
-      logHighlight: []
+      logHighlight: [],
+      inCollapse: {},
+      linesShowing: [],
+      clickCollapse: false
     }
   },
   computed: {
+    inCollapseLineSorted() {
+      return Object.keys(this.inCollapse).map(key => Number(key))
+    },
     remain() {
       if (typeof +this.height === 'number') {
         return this.height > 0 ? Math.floor(this.height / this.rowHeight) : 30
@@ -163,6 +170,7 @@ export default {
       let currentSession = ''
       let currentSessionIndex = 0
       lineParsed.forEach((item, index) => {
+        item.lineNumber = index + 1
         if (item.isHighlight) {
           this.logSessions.push({
             label: `@${`${index}`.padStart(
@@ -196,10 +204,11 @@ export default {
           }
         }
       })
+      this.freshLineShowing(lineParsed)
       return lineParsed
     },
     linesCount() {
-      return this.lines.length + (this.loading ? 1 : 0)
+      return this.linesShowing.length + (this.loading ? 1 : 0)
     },
     logViewerStyle() {
       let style = this.customStyle || {}
@@ -212,9 +221,12 @@ export default {
   watch: {
     lines: {
       immediate: true,
-      handler(lines) {
+      handler(newValue, oldValue) {
+        if (newValue === oldValue) {
+          return
+        }
         this.$refs.virtualList && this.$refs.virtualList.forceRender()
-        if (this.autoScroll) {
+        if (this.autoScroll && !this.clickCollapse) {
           this.setScrollTop(this.linesCount)
         }
       }
@@ -231,19 +243,27 @@ export default {
       this.currentSession = to
       this.setScrollTop(this.currentSession - 1)
     },
-    //
     getLineWrapperProps(index) {
-      const height = this.rowHeight
+      let height = this.rowHeight
+      const data = this.linesShowing[index]
       const props = {
         height,
         hasNumber: this.hasNumber,
         softWrap: this.softWrap,
         numberFollowLineStyle: this.numberFollowLineStyle,
         background: this.background,
+        isSessionStart: data.isSessionStart,
         numberData: {
-          number: index + 1
+          number: data.lineNumber
         }
       }
+      const _this = this
+      props.setCollapse = (number, inCollapse) => {
+        _this.clickCollapse = true
+        _this.inCollapse[number] = inCollapse
+        _this.freshLineShowing(this.lines)
+      }
+      props.data = data
       this.lineWrapperStyle &&
         (props.comStyle = this.lineWrapperStyle(index + 1))
       if (this.loading && index === this.linesCount - 1) {
@@ -254,10 +274,25 @@ export default {
           }
         }
       }
-      props.data = this.lines[index]
       return {
         props
       }
+    },
+    freshLineShowing(linesNow) {
+      this.linesShowing = []
+      let lastSessionCollapse = false
+      linesNow.forEach(item => {
+        if (item.isSessionStart) {
+          this.inCollapse[item.lineNumber] =
+            this.inCollapse[item.lineNumber] || false
+          lastSessionCollapse = this.inCollapse[item.lineNumber]
+          this.linesShowing.push(item)
+        } else {
+          if (!lastSessionCollapse) {
+            this.linesShowing.push(item)
+          }
+        }
+      })
     },
     setScrollTop(line) {
       if (this.scrollDuration === 0) {

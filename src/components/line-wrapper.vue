@@ -1,5 +1,12 @@
 <template>
-  <div class="line-wrapper">
+  <div class="line-wrapper" @click="switchCollapseStatus">
+    <line-session
+      ref="lineSession"
+      :is-session-start="isSessionStart"
+      :number="numberData['number']"
+      :style="customStyle"
+      :set-collapse="setCollapse"
+    ></line-session>
     <line-number
       v-if="hasNumber"
       v-bind="numberData"
@@ -13,10 +20,12 @@
 <script>
 import LineContent from './line-content.vue'
 import LineNumber from './line-number.vue'
+import LineSession from './line_session.vue'
 
 export default {
   name: 'LineWrapper',
   components: {
+    LineSession,
     LineContent,
     LineNumber
   },
@@ -53,7 +62,15 @@ export default {
     softWrap: Boolean,
     numberFollowLineStyle: Boolean,
     hasNumber: Boolean,
-    numberData: Object
+    numberData: Object,
+    isSessionStart: Boolean,
+    setCollapse: Function,
+    lineInCollapse: Function
+  },
+  data() {
+    return {
+      isLineCollapse: false
+    }
   },
   computed: {
     customStyle() {
@@ -71,6 +88,14 @@ export default {
       }
       return lineStyle
     }
+  },
+  methods: {
+    switchCollapseStatus() {
+      if (!this.isSessionStart) {
+        return
+      }
+      this.$refs.lineSession.switchCollapseStatus()
+    }
   }
 }
 </script>
@@ -87,10 +112,21 @@ export default {
   }
 
   .line-number {
-    min-width: 40px;
+    min-width: 30px;
     text-align: right;
     color: #666;
     padding-right: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .line-session {
+    width: 20px;
+    text-align: right;
+    color: #666;
+    padding-right: 3px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
