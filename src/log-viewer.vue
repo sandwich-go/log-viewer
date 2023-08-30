@@ -38,7 +38,7 @@
           v-on:click="softWrap = !softWrap"
           :style="{
             'font-size': '110%',
-            width: '30px'
+            width: '28px'
           }"
         >
           <svg
@@ -63,7 +63,7 @@
           v-on:click="autoScroll = !autoScroll"
           :style="{
             'font-size': '110%',
-            width: '30px'
+            width: '28px'
           }"
         >
           <svg
@@ -89,7 +89,7 @@
           v-on:click="allSwitchCollapse"
           :style="{
             'font-size': '110%',
-            width: '30px'
+            width: '28px'
           }"
         >
           <svg
@@ -134,7 +134,7 @@
           title="到日志第一行"
           class="btn"
           v-on:click="toStart"
-          :style="{'font-size': '110%', width: '30px'}"
+          :style="{'font-size': '110%', width: '28px'}"
         >
           <svg
             class="svg-icon-bigger"
@@ -157,7 +157,7 @@
           data-shift="west"
           title="到日志最后一行"
           v-on:click="toEnd"
-          :style="{'font-size': '110%', width: '30px'}"
+          :style="{'font-size': '110%', width: '28px'}"
         >
           <svg
             class="svg-icon-bigger"
@@ -175,7 +175,7 @@
           class="btn"
           title="拷贝"
           v-on:click="copy"
-          :style="{'font-size': '110%', width: '30px'}"
+          :style="{'font-size': '110%', width: '28px'}"
         >
           <svg
             fill="#000000"
@@ -577,7 +577,7 @@ select {
 }
 
 .svg-icon-bigger {
-  transform: scale(1.4);
+  transform: scale(1.3);
 }
 
 .svg-icon-bigger-13 {
