@@ -112,6 +112,6 @@
   },
   "types": "src/log-viewer.d.ts",
   "unpkg": "dist/log-viewer.min.js",
-  "version": "1.7.44",
+  "version": "1.7.45",
   "vue-sfc-cli": "1.12.0"
 }
