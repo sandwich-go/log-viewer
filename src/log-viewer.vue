@@ -536,7 +536,6 @@ export default {
       })
       if (changed) {
         this.freshLineShowing(this.lines)
-        this.$refs.virtualList && this.$refs.virtualList.forceRender()
       }
     },
     toEnd() {

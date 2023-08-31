@@ -124,10 +124,10 @@ export default {
   }
 
   .line-session {
-    width: 20px;
+    width: 18px;
     text-align: right;
     color: white;
-    padding-right: 3px;
+    padding-left: 6px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
