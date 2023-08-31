@@ -565,7 +565,7 @@ export default {
 
 .div-flex-end-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
