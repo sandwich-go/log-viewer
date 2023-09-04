@@ -3,7 +3,7 @@
     <span v-if="isSessionStart" style="font-size: 110%;">
       <span v-if="inCollapse(number)">
         <svg
-          class="svg-icon-bigger"
+          class="svg-icon-bigger-15"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@
       </span>
       <span v-else>
         <svg
-          class="svg-icon-bigger"
+          class="svg-icon-bigger-15"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

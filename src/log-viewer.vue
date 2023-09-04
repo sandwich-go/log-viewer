@@ -589,6 +589,10 @@ select {
   transform: scale(1.3);
 }
 
+.svg-icon-bigger-15 {
+  transform: scale(1.5);
+}
+
 .svg-icon-bigger-12 {
   transform: scale(1.2);
 }
