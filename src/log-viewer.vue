@@ -474,20 +474,22 @@ export default {
       }
     },
     freshLineShowing(linesNow) {
-      this.linesShowing = []
       let lastSessionCollapse = false
-      linesNow.forEach(item => {
-        if (item.isSessionStart) {
-          this.inCollapse[item.lineNumber] =
-            this.inCollapse[item.lineNumber] || false
-          lastSessionCollapse = this.inCollapse[item.lineNumber]
-          this.linesShowing.push(item)
-        } else {
-          if (!lastSessionCollapse) {
-            this.linesShowing.push(item)
+      this.linesShowing = Array.from(
+        linesNow.filter(item => {
+          if (item.isSessionStart) {
+            this.inCollapse[item.lineNumber] =
+              this.inCollapse[item.lineNumber] || false
+            lastSessionCollapse = this.inCollapse[item.lineNumber]
+            return true
+          } else {
+            if (!lastSessionCollapse) {
+              return true
+            }
           }
-        }
-      })
+          return false
+        })
+      )
     },
     setScrollTop(line) {
       if (this.scrollDuration === 0) {

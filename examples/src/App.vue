@@ -47,7 +47,7 @@
         :height="logViewHeight(80)"
         :loading="loading"
         :font-size="Number(fontSize)"
-        :scroll-duration="1000"
+        :scroll-duration="0"
         :log="log"
         :session-slot="`session-select-slot`"
         :event-mapping="{
