@@ -18,7 +18,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "@sandwich-go/jsb": "0.1.114",
+    "@sandwich-go/jsb": "0.1.119",
     "vue-virtual-scroll-list": "1.4.7"
   },
   "description": "💻 View terminal logs in browser",

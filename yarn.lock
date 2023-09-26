@@ -1159,10 +1159,10 @@
     moment "^2.29.4"
     sass-loader "7.1.0"
 
-"@sandwich-go/jsb@0.1.114":
-  version "0.1.114"
-  resolved "https://registry.yarnpkg.com/@sandwich-go/jsb/-/jsb-0.1.114.tgz#9853a2b54ae6e75aa0e0625e1d270a4316458135"
-  integrity sha512-k5RfR7FC4M5ZKj0Ph6n5rW4AVFdBFYAMz2zdb5sbNQ2/Jg/pxt+fBvl1wXL0yLJu3MMMC8ZCP+AgsFhQV2BDeA==
+"@sandwich-go/jsb@0.1.119":
+  version "0.1.119"
+  resolved "https://registry.yarnpkg.com/@sandwich-go/jsb/-/jsb-0.1.119.tgz#490212239454b0e13810f335c4afaee395269b50"
+  integrity sha512-A/TBSrZs58JAuuqRqLH0pdsWiwoeXyROZsNLa4cIYTC3G++EvC3UX4+laAzdasf8rfCH4Nys3zIXfH004fIG7A==
   dependencies:
     "@sandwich-go/jsb" "0.1.100"
     buffer "^6.0.3"
