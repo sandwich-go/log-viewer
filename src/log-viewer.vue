@@ -286,6 +286,11 @@ export default {
      * The orginal log text shuold be shown
      */
     log: String,
+    // 默认自动换行
+    autoWrap: {
+      type: Boolean,
+      default: true
+    },
     /**
      * Loading Status flag
      */
@@ -321,7 +326,7 @@ export default {
   },
   data() {
     return {
-      softWrap: true,
+      softWrap: this.autoWrap,
       autoScroll: true,
       start: 0,
       scrollStart: 0,
