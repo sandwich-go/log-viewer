@@ -172,13 +172,13 @@
             </svg>
           </button>
           <button
-            v-show="item === 'copy'"
+            v-if="item === 'copy'"
             class="btn"
             title="拷贝"
             v-on:click="copy"
             :style="{'font-size': '110%', width: '28px'}"
           >
-            <span>
+            <span style="pointer-events: none;">
               <svg
                 fill="#000000"
                 version="1.1"
