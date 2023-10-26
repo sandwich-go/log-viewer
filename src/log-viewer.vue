@@ -172,7 +172,7 @@
             </svg>
           </button>
           <button
-            v-if="item === 'copy'"
+            v-show="item === 'copy'"
             class="btn"
             title="拷贝"
             v-on:click="copy"
